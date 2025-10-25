@@ -342,9 +342,9 @@
             this.btnAddorUpdatePrescription.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(118)))), ((int)(((byte)(251)))));
             this.btnAddorUpdatePrescription.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddorUpdatePrescription.ForeColor = System.Drawing.Color.White;
-            this.btnAddorUpdatePrescription.Location = new System.Drawing.Point(254, 545);
+            this.btnAddorUpdatePrescription.Location = new System.Drawing.Point(262, 550);
             this.btnAddorUpdatePrescription.Name = "btnAddorUpdatePrescription";
-            this.btnAddorUpdatePrescription.Size = new System.Drawing.Size(184, 74);
+            this.btnAddorUpdatePrescription.Size = new System.Drawing.Size(172, 68);
             this.btnAddorUpdatePrescription.TabIndex = 42;
             this.btnAddorUpdatePrescription.Text = "Add Prescription";
             this.btnAddorUpdatePrescription.Click += new System.EventHandler(this.btnAddorUpdatePrescription_Click);
@@ -362,9 +362,9 @@
             this.btnClose.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(444, 545);
+            this.btnClose.Location = new System.Drawing.Point(452, 550);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(128, 74);
+            this.btnClose.Size = new System.Drawing.Size(116, 68);
             this.btnClose.TabIndex = 46;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -377,15 +377,15 @@
             this.btnSendSummaryToPatient.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSendSummaryToPatient.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSendSummaryToPatient.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSendSummaryToPatient.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(224)))), ((int)(((byte)(170)))));
-            this.btnSendSummaryToPatient.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(180)))), ((int)(((byte)(170)))));
+            this.btnSendSummaryToPatient.FillColor = System.Drawing.Color.DarkGray;
+            this.btnSendSummaryToPatient.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSendSummaryToPatient.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendSummaryToPatient.ForeColor = System.Drawing.Color.White;
-            this.btnSendSummaryToPatient.Location = new System.Drawing.Point(64, 545);
+            this.btnSendSummaryToPatient.Location = new System.Drawing.Point(72, 550);
             this.btnSendSummaryToPatient.Name = "btnSendSummaryToPatient";
-            this.btnSendSummaryToPatient.Size = new System.Drawing.Size(184, 74);
+            this.btnSendSummaryToPatient.Size = new System.Drawing.Size(172, 68);
             this.btnSendSummaryToPatient.TabIndex = 47;
-            this.btnSendSummaryToPatient.Text = "Print Summary";
+            this.btnSendSummaryToPatient.Text = "Export as PDF";
             this.btnSendSummaryToPatient.Click += new System.EventHandler(this.btnSendSummaryToPatient_Click);
             // 
             // pictureBox1

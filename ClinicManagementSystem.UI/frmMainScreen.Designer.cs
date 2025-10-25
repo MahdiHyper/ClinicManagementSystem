@@ -205,7 +205,7 @@
             this.guna2CustomGradientPanel9.BorderRadius = 18;
             this.guna2CustomGradientPanel9.Location = new System.Drawing.Point(1077, 111);
             this.guna2CustomGradientPanel9.Name = "guna2CustomGradientPanel9";
-            this.guna2CustomGradientPanel9.Size = new System.Drawing.Size(196, 183);
+            this.guna2CustomGradientPanel9.Size = new System.Drawing.Size(196, 201);
             this.guna2CustomGradientPanel9.TabIndex = 4;
             // 
             // guna2VSeparator1
@@ -231,7 +231,7 @@
             this.btnMedicalRecords.ImageSize = new System.Drawing.Size(25, 25);
             this.btnMedicalRecords.Location = new System.Drawing.Point(21, 489);
             this.btnMedicalRecords.Name = "btnMedicalRecords";
-            this.btnMedicalRecords.Size = new System.Drawing.Size(163, 106);
+            this.btnMedicalRecords.Size = new System.Drawing.Size(163, 109);
             this.btnMedicalRecords.TabIndex = 3;
             this.btnMedicalRecords.Text = "Records";
             this.btnMedicalRecords.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -253,7 +253,7 @@
             this.btnDoctors.ImageSize = new System.Drawing.Size(25, 25);
             this.btnDoctors.Location = new System.Drawing.Point(21, 363);
             this.btnDoctors.Name = "btnDoctors";
-            this.btnDoctors.Size = new System.Drawing.Size(163, 106);
+            this.btnDoctors.Size = new System.Drawing.Size(163, 109);
             this.btnDoctors.TabIndex = 3;
             this.btnDoctors.Text = "Doctors";
             this.btnDoctors.Click += new System.EventHandler(this.btnDoctors_Click);
@@ -274,7 +274,7 @@
             this.btnPatients.ImageSize = new System.Drawing.Size(25, 25);
             this.btnPatients.Location = new System.Drawing.Point(21, 237);
             this.btnPatients.Name = "btnPatients";
-            this.btnPatients.Size = new System.Drawing.Size(163, 106);
+            this.btnPatients.Size = new System.Drawing.Size(163, 109);
             this.btnPatients.TabIndex = 3;
             this.btnPatients.Text = "Patients";
             this.btnPatients.TextOffset = new System.Drawing.Point(3, 0);
@@ -293,9 +293,9 @@
             this.btnAppointments.Image = global::ClinicManagementSystem.UI.Properties.Resources.appointment_book;
             this.btnAppointments.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAppointments.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnAppointments.Location = new System.Drawing.Point(22, 111);
+            this.btnAppointments.Location = new System.Drawing.Point(21, 111);
             this.btnAppointments.Name = "btnAppointments";
-            this.btnAppointments.Size = new System.Drawing.Size(163, 106);
+            this.btnAppointments.Size = new System.Drawing.Size(163, 109);
             this.btnAppointments.TabIndex = 3;
             this.btnAppointments.Text = "Appointments";
             this.btnAppointments.TextOffset = new System.Drawing.Point(10, 0);
@@ -314,17 +314,17 @@
             // guna2CustomGradientPanel10
             // 
             this.guna2CustomGradientPanel10.BorderRadius = 18;
-            this.guna2CustomGradientPanel10.Location = new System.Drawing.Point(233, 329);
+            this.guna2CustomGradientPanel10.Location = new System.Drawing.Point(233, 337);
             this.guna2CustomGradientPanel10.Name = "guna2CustomGradientPanel10";
-            this.guna2CustomGradientPanel10.Size = new System.Drawing.Size(508, 183);
+            this.guna2CustomGradientPanel10.Size = new System.Drawing.Size(508, 175);
             this.guna2CustomGradientPanel10.TabIndex = 4;
             // 
             // guna2CustomGradientPanel11
             // 
             this.guna2CustomGradientPanel11.BorderRadius = 18;
-            this.guna2CustomGradientPanel11.Location = new System.Drawing.Point(765, 329);
+            this.guna2CustomGradientPanel11.Location = new System.Drawing.Point(765, 337);
             this.guna2CustomGradientPanel11.Name = "guna2CustomGradientPanel11";
-            this.guna2CustomGradientPanel11.Size = new System.Drawing.Size(508, 395);
+            this.guna2CustomGradientPanel11.Size = new System.Drawing.Size(508, 387);
             this.guna2CustomGradientPanel11.TabIndex = 4;
             // 
             // guna2CustomGradientPanel12
@@ -340,7 +340,7 @@
             this.guna2CustomGradientPanel6.BorderRadius = 18;
             this.guna2CustomGradientPanel6.Location = new System.Drawing.Point(866, 111);
             this.guna2CustomGradientPanel6.Name = "guna2CustomGradientPanel6";
-            this.guna2CustomGradientPanel6.Size = new System.Drawing.Size(196, 183);
+            this.guna2CustomGradientPanel6.Size = new System.Drawing.Size(196, 201);
             this.guna2CustomGradientPanel6.TabIndex = 4;
             // 
             // guna2CustomGradientPanel7
@@ -348,7 +348,7 @@
             this.guna2CustomGradientPanel7.BorderRadius = 18;
             this.guna2CustomGradientPanel7.Location = new System.Drawing.Point(655, 111);
             this.guna2CustomGradientPanel7.Name = "guna2CustomGradientPanel7";
-            this.guna2CustomGradientPanel7.Size = new System.Drawing.Size(196, 183);
+            this.guna2CustomGradientPanel7.Size = new System.Drawing.Size(196, 201);
             this.guna2CustomGradientPanel7.TabIndex = 4;
             // 
             // guna2CustomGradientPanel8
@@ -356,7 +356,7 @@
             this.guna2CustomGradientPanel8.BorderRadius = 18;
             this.guna2CustomGradientPanel8.Location = new System.Drawing.Point(444, 111);
             this.guna2CustomGradientPanel8.Name = "guna2CustomGradientPanel8";
-            this.guna2CustomGradientPanel8.Size = new System.Drawing.Size(196, 183);
+            this.guna2CustomGradientPanel8.Size = new System.Drawing.Size(196, 201);
             this.guna2CustomGradientPanel8.TabIndex = 4;
             // 
             // guna2CustomGradientPanel13
@@ -364,7 +364,7 @@
             this.guna2CustomGradientPanel13.BorderRadius = 18;
             this.guna2CustomGradientPanel13.Location = new System.Drawing.Point(233, 111);
             this.guna2CustomGradientPanel13.Name = "guna2CustomGradientPanel13";
-            this.guna2CustomGradientPanel13.Size = new System.Drawing.Size(196, 183);
+            this.guna2CustomGradientPanel13.Size = new System.Drawing.Size(196, 201);
             this.guna2CustomGradientPanel13.TabIndex = 4;
             // 
             // guna2Button1
@@ -410,9 +410,9 @@
             this.guna2Button2.Image = global::ClinicManagementSystem.UI.Properties.Resources.file;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button2.Location = new System.Drawing.Point(22, 618);
+            this.guna2Button2.Location = new System.Drawing.Point(21, 615);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(163, 106);
+            this.guna2Button2.Size = new System.Drawing.Size(163, 109);
             this.guna2Button2.TabIndex = 3;
             this.guna2Button2.Text = "Invoices";
             this.guna2Button2.Click += new System.EventHandler(this.btnInvoices_Click);

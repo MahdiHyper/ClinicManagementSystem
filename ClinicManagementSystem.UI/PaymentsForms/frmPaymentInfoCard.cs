@@ -1,14 +1,17 @@
 ﻿using ClinicManagementSystem.Business;
 using ClinicManagementSystem.Logic;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
+
+
 
 namespace ClinicManagementSystem.UI.PaymentsForms
 {
@@ -46,19 +49,8 @@ namespace ClinicManagementSystem.UI.PaymentsForms
 
         }
 
-        private void _GetAndFillPatientInfo()
+        private string GetBloodType()
         {
-            _PatientID = clsPayment.GetPatientIdByPaymentID(_PaymentID);
-            _Patient = clsPatient.GetPatientByID(_PatientID);
-
-            if (_Patient == null)
-            {
-                MessageBox.Show("Patient not found try later", "Error Patient",
-                                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                return;
-            }
-
             _BloodTypes = clsPatient.GetAllBloodTypes();
 
             lblPatientFullName.Text = _Patient.PersonInfo.FullName.ToUpper();
@@ -73,7 +65,22 @@ namespace ClinicManagementSystem.UI.PaymentsForms
                 }
             }
 
-            lblBloodeType.Text = bloodTypeName;
+            return bloodTypeName;
+        }
+        private void _GetAndFillPatientInfo()
+        {
+            _PatientID = clsPayment.GetPatientIdByPaymentID(_PaymentID);
+            _Patient = clsPatient.GetPatientByID(_PatientID);
+
+            if (_Patient == null)
+            {
+                MessageBox.Show("Patient not found try later", "Error Patient",
+                                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            lblBloodeType.Text = GetBloodType();
             lblPhoneNumber.Text = _Patient.PersonInfo.PhoneNumber;
             lblPatientGender.Text = _Patient.PersonInfo.GenderName;
             lblPatientNotes.Text = _Patient.Notes.ToString();
@@ -123,6 +130,136 @@ namespace ClinicManagementSystem.UI.PaymentsForms
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnExportPDF_Click(object sender, EventArgs e)
+        {
+            CreateAndDrawPdf();
+        }
+
+        private void CreateAndDrawPdf()
+        {
+            try
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF Files (*.pdf)|*.pdf";
+                sfd.FileName = "Invoice_" + DateTime.Now.ToString("yyyyMMdd_HHmm") + ".pdf";
+
+                if (sfd.ShowDialog() != DialogResult.OK)
+                    return; 
+
+                string filePath = sfd.FileName;
+
+                Document doc = new Document(PageSize.A4, 36, 36, 36, 36);
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+                doc.Open();
+
+                iTextSharp.text.Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18, BaseColor.BLACK);
+                iTextSharp.text.Font boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK);
+                iTextSharp.text.Font normalFont = FontFactory.GetFont(FontFactory.HELVETICA, 12, BaseColor.BLACK);
+
+                System.Drawing.Image netImg = Properties.Resources.LOGO_PNG;
+
+                using (var ms = new MemoryStream())
+                {
+                    netImg.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    iTextSharp.text.Image pdfImg = iTextSharp.text.Image.GetInstance(ms.ToArray());
+                    pdfImg.ScaleToFit(100f, 100f);
+                    pdfImg.Alignment = Element.ALIGN_LEFT;
+                    doc.Add(pdfImg);
+                }
+
+                Paragraph title = new Paragraph("Invoice Summary", titleFont);
+                title.Alignment = Element.ALIGN_CENTER;
+                doc.Add(title);
+
+                doc.Add(new Paragraph(" "));
+
+                PdfContentByte cb = writer.DirectContent;
+                cb.SetColorStroke(BaseColor.DARK_GRAY);
+                cb.SetLineWidth(2f);
+                float lineY = doc.PageSize.Height - 150;
+                cb.MoveTo(50, lineY);
+                cb.LineTo(doc.PageSize.Width - 50, lineY);
+                cb.Stroke();
+
+                doc.Add(new Paragraph(" "));
+
+
+                PdfPTable patientTable = new PdfPTable(2);
+                patientTable.SpacingBefore = 20f;
+                patientTable.WidthPercentage = 100;
+                patientTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                patientTable.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
+                patientTable.AddCell(new Phrase("Patient Name:", boldFont));
+                patientTable.AddCell(new Phrase(_Patient.PersonInfo.FullName, normalFont));
+
+                patientTable.AddCell(new Phrase("Blood Type:", boldFont));
+                patientTable.AddCell(new Phrase(GetBloodType(), normalFont));
+
+                patientTable.AddCell(new Phrase("Phone:", boldFont));
+                patientTable.AddCell(new Phrase(_Patient.PersonInfo.PhoneNumber, normalFont));
+
+                patientTable.AddCell(new Phrase("Age:", boldFont));
+                patientTable.AddCell(new Phrase(_Patient.PersonInfo.Age.ToString(), normalFont));
+
+                patientTable.AddCell(new Phrase("Notes:", boldFont));
+                patientTable.AddCell(new Phrase(_Patient.Notes.ToString(), normalFont));
+
+                doc.Add(patientTable);
+
+                doc.Add(new Paragraph(" "));
+                doc.Add(new Paragraph(" "));
+
+                PdfPTable paymentTable = new PdfPTable(2);
+                paymentTable.SpacingBefore = 10f;
+                paymentTable.WidthPercentage = 100;
+                paymentTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                paymentTable.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
+                paymentTable.AddCell(new Phrase("Invoice ID:", boldFont));
+                paymentTable.AddCell(new Phrase(_PaymentID.ToString(), normalFont));
+
+                paymentTable.AddCell(new Phrase("Payment Date:", boldFont));
+                paymentTable.AddCell(new Phrase(_Payment.PaymentDate.ToShortDateString(), normalFont));
+
+                paymentTable.AddCell(new Phrase("Total Amount:", boldFont));
+                paymentTable.AddCell(new Phrase("$" + _Payment.PaymentAmount.ToString("0.00"), normalFont));
+
+                paymentTable.AddCell(new Phrase("Received Amount:", boldFont));
+                paymentTable.AddCell(new Phrase("$" + _Payment.PaymentReceived.ToString("0.00"), normalFont));
+
+                paymentTable.AddCell(new Phrase("Remaining:", boldFont));
+                paymentTable.AddCell(new Phrase("$" + _Payment.GetRemainingAmount().ToString("0.00"), normalFont));
+
+                doc.Add(paymentTable);
+
+                var smallGray = FontFactory.GetFont(FontFactory.HELVETICA, 9, BaseColor.DARK_GRAY);
+
+                ColumnText.ShowTextAligned(
+                    writer.DirectContent,
+                    Element.ALIGN_RIGHT,
+                    new Phrase("Generated on " + DateTime.Now.ToString("G"), smallGray),
+                    doc.PageSize.Width - 50, 
+                    30,                      
+                    0
+                );
+
+
+                doc.Close();
+                writer.Close();
+
+                MessageBox.Show("PDF created successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Process.Start(filePath);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while creating PDF:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
     }
 }

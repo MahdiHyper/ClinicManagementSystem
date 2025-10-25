@@ -48,6 +48,9 @@
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.DoctorPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPaymentRemaining = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.lblPaymentRecived = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPaymentAmount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblIssueDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -58,20 +61,17 @@
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnExportPDF = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblConsultationFee = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblSpecialization = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2VSeparator3 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.lblEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblDoctorName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblPaymentRecived = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblPaymentRemaining = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblSpecialization = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblConsultationFee = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PatientPanel.SuspendLayout();
@@ -257,7 +257,7 @@
             this.lblPatientFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
             this.lblPatientFullName.Location = new System.Drawing.Point(148, 13);
             this.lblPatientFullName.Name = "lblPatientFullName";
-            this.lblPatientFullName.Size = new System.Drawing.Size(32, 19);
+            this.lblPatientFullName.Size = new System.Drawing.Size(32, 20);
             this.lblPatientFullName.TabIndex = 22;
             this.lblPatientFullName.Text = "N/A";
             // 
@@ -304,6 +304,36 @@
             this.DoctorPanel.Name = "DoctorPanel";
             this.DoctorPanel.Size = new System.Drawing.Size(835, 154);
             this.DoctorPanel.TabIndex = 59;
+            // 
+            // lblPaymentRemaining
+            // 
+            this.lblPaymentRemaining.BackColor = System.Drawing.Color.Transparent;
+            this.lblPaymentRemaining.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentRemaining.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
+            this.lblPaymentRemaining.Location = new System.Drawing.Point(572, 117);
+            this.lblPaymentRemaining.Name = "lblPaymentRemaining";
+            this.lblPaymentRemaining.Size = new System.Drawing.Size(32, 20);
+            this.lblPaymentRemaining.TabIndex = 67;
+            this.lblPaymentRemaining.Text = "N/A";
+            // 
+            // guna2VSeparator1
+            // 
+            this.guna2VSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2VSeparator1.Location = new System.Drawing.Point(395, 14);
+            this.guna2VSeparator1.Name = "guna2VSeparator1";
+            this.guna2VSeparator1.Size = new System.Drawing.Size(22, 129);
+            this.guna2VSeparator1.TabIndex = 66;
+            // 
+            // lblPaymentRecived
+            // 
+            this.lblPaymentRecived.BackColor = System.Drawing.Color.Transparent;
+            this.lblPaymentRecived.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentRecived.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
+            this.lblPaymentRecived.Location = new System.Drawing.Point(572, 70);
+            this.lblPaymentRecived.Name = "lblPaymentRecived";
+            this.lblPaymentRecived.Size = new System.Drawing.Size(32, 20);
+            this.lblPaymentRecived.TabIndex = 66;
+            this.lblPaymentRecived.Text = "N/A";
             // 
             // lblPaymentAmount
             // 
@@ -430,14 +460,7 @@
             this.btnExportPDF.Size = new System.Drawing.Size(299, 65);
             this.btnExportPDF.TabIndex = 62;
             this.btnExportPDF.Text = "Export as PDF";
-            // 
-            // guna2VSeparator1
-            // 
-            this.guna2VSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(395, 14);
-            this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(22, 129);
-            this.guna2VSeparator1.TabIndex = 66;
+            this.btnExportPDF.Click += new System.EventHandler(this.btnExportPDF_Click);
             // 
             // guna2HtmlLabel14
             // 
@@ -469,6 +492,50 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(835, 154);
             this.guna2Panel2.TabIndex = 67;
+            // 
+            // lblConsultationFee
+            // 
+            this.lblConsultationFee.BackColor = System.Drawing.Color.Transparent;
+            this.lblConsultationFee.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConsultationFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
+            this.lblConsultationFee.Location = new System.Drawing.Point(568, 91);
+            this.lblConsultationFee.Name = "lblConsultationFee";
+            this.lblConsultationFee.Size = new System.Drawing.Size(32, 20);
+            this.lblConsultationFee.TabIndex = 70;
+            this.lblConsultationFee.Text = "N/A";
+            // 
+            // lblSpecialization
+            // 
+            this.lblSpecialization.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpecialization.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpecialization.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
+            this.lblSpecialization.Location = new System.Drawing.Point(568, 35);
+            this.lblSpecialization.Name = "lblSpecialization";
+            this.lblSpecialization.Size = new System.Drawing.Size(32, 20);
+            this.lblSpecialization.TabIndex = 69;
+            this.lblSpecialization.Text = "N/A";
+            // 
+            // guna2HtmlLabel16
+            // 
+            this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel16.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
+            this.guna2HtmlLabel16.Location = new System.Drawing.Point(427, 89);
+            this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
+            this.guna2HtmlLabel16.Size = new System.Drawing.Size(129, 22);
+            this.guna2HtmlLabel16.TabIndex = 68;
+            this.guna2HtmlLabel16.Text = "Consultation Fee:";
+            // 
+            // guna2HtmlLabel10
+            // 
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(450, 33);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(106, 22);
+            this.guna2HtmlLabel10.TabIndex = 67;
+            this.guna2HtmlLabel10.Text = "Specialization:";
             // 
             // guna2VSeparator3
             // 
@@ -521,72 +588,6 @@
             this.guna2HtmlLabel23.Size = new System.Drawing.Size(116, 22);
             this.guna2HtmlLabel23.TabIndex = 21;
             this.guna2HtmlLabel23.Text = "Docotor Name:";
-            // 
-            // lblPaymentRecived
-            // 
-            this.lblPaymentRecived.BackColor = System.Drawing.Color.Transparent;
-            this.lblPaymentRecived.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentRecived.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.lblPaymentRecived.Location = new System.Drawing.Point(572, 70);
-            this.lblPaymentRecived.Name = "lblPaymentRecived";
-            this.lblPaymentRecived.Size = new System.Drawing.Size(32, 20);
-            this.lblPaymentRecived.TabIndex = 66;
-            this.lblPaymentRecived.Text = "N/A";
-            // 
-            // lblPaymentRemaining
-            // 
-            this.lblPaymentRemaining.BackColor = System.Drawing.Color.Transparent;
-            this.lblPaymentRemaining.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentRemaining.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.lblPaymentRemaining.Location = new System.Drawing.Point(572, 117);
-            this.lblPaymentRemaining.Name = "lblPaymentRemaining";
-            this.lblPaymentRemaining.Size = new System.Drawing.Size(32, 20);
-            this.lblPaymentRemaining.TabIndex = 67;
-            this.lblPaymentRemaining.Text = "N/A";
-            // 
-            // guna2HtmlLabel10
-            // 
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(450, 33);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(106, 22);
-            this.guna2HtmlLabel10.TabIndex = 67;
-            this.guna2HtmlLabel10.Text = "Specialization:";
-            // 
-            // guna2HtmlLabel16
-            // 
-            this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel16.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.guna2HtmlLabel16.Location = new System.Drawing.Point(427, 89);
-            this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
-            this.guna2HtmlLabel16.Size = new System.Drawing.Size(129, 22);
-            this.guna2HtmlLabel16.TabIndex = 68;
-            this.guna2HtmlLabel16.Text = "Consultation Fee:";
-            // 
-            // lblSpecialization
-            // 
-            this.lblSpecialization.BackColor = System.Drawing.Color.Transparent;
-            this.lblSpecialization.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpecialization.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.lblSpecialization.Location = new System.Drawing.Point(568, 35);
-            this.lblSpecialization.Name = "lblSpecialization";
-            this.lblSpecialization.Size = new System.Drawing.Size(32, 20);
-            this.lblSpecialization.TabIndex = 69;
-            this.lblSpecialization.Text = "N/A";
-            // 
-            // lblConsultationFee
-            // 
-            this.lblConsultationFee.BackColor = System.Drawing.Color.Transparent;
-            this.lblConsultationFee.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsultationFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.lblConsultationFee.Location = new System.Drawing.Point(568, 91);
-            this.lblConsultationFee.Name = "lblConsultationFee";
-            this.lblConsultationFee.Size = new System.Drawing.Size(32, 20);
-            this.lblConsultationFee.TabIndex = 70;
-            this.lblConsultationFee.Text = "N/A";
             // 
             // frmPaymentInfoCard
             // 
