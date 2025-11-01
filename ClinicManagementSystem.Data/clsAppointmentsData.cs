@@ -296,6 +296,40 @@ namespace ClinicManagementSystem.Data
             }
         }
 
+        public static int GetNextScheduleAppointment()
+        {
+            int ID = -1;
+
+            string Query = @"SELECT Top 1 a.AppointmentID
+                        FROM Appointments a
+                        WHERE a.AppointmentDateTime > GETDATE() AND a.Status = 1
+                        ORDER BY a.AppointmentDateTime ASC;";
+
+            using (var conn = new SqlConnection(Connect))
+            using (SqlCommand cmd = new SqlCommand(Query, conn))
+            {
+                try
+                {
+                    conn.Open();
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out ID))
+                    {
+                        return ID;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"ERROR Data - GetNextScheduleAppointment: {ex.Message}");
+                }
+
+            }
+
+            return ID;
+        }
+
 
     }
 }

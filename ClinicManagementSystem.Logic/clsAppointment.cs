@@ -164,5 +164,10 @@ namespace ClinicManagementSystem.Logic
         {
             return clsAppointmentsData.IsPatientFree(PatientID, AppointmentDateTime);
         }
+
+        public static int GetNextScheduleAppointment ()
+        {
+            return clsAppointmentsData.GetNextScheduleAppointment();
+        }
     }
 }

@@ -32,7 +32,6 @@
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.PatientPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
@@ -72,11 +71,12 @@
             this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblDoctorName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PatientPanel.SuspendLayout();
             this.DoctorPanel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Separator2
@@ -108,16 +108,6 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Invoice Card";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(42, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 77);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
             // 
             // guna2HtmlLabel6
             // 
@@ -277,7 +267,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(50)))), ((int)(((byte)(88)))));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(61, 537);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(61, 504);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(82, 19);
             this.guna2HtmlLabel2.TabIndex = 60;
@@ -300,7 +290,7 @@
             this.DoctorPanel.Controls.Add(this.lblPaymentID);
             this.DoctorPanel.Controls.Add(this.guna2HtmlLabel7);
             this.DoctorPanel.FillColor = System.Drawing.Color.White;
-            this.DoctorPanel.Location = new System.Drawing.Point(42, 562);
+            this.DoctorPanel.Location = new System.Drawing.Point(42, 529);
             this.DoctorPanel.Name = "DoctorPanel";
             this.DoctorPanel.Size = new System.Drawing.Size(835, 154);
             this.DoctorPanel.TabIndex = 59;
@@ -436,7 +426,7 @@
             this.btnClose.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(785, 748);
+            this.btnClose.Location = new System.Drawing.Point(785, 712);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 65);
             this.btnClose.TabIndex = 61;
@@ -455,7 +445,7 @@
             this.btnExportPDF.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.btnExportPDF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportPDF.ForeColor = System.Drawing.Color.White;
-            this.btnExportPDF.Location = new System.Drawing.Point(308, 748);
+            this.btnExportPDF.Location = new System.Drawing.Point(308, 712);
             this.btnExportPDF.Name = "btnExportPDF";
             this.btnExportPDF.Size = new System.Drawing.Size(299, 65);
             this.btnExportPDF.TabIndex = 62;
@@ -467,7 +457,7 @@
             this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(50)))), ((int)(((byte)(88)))));
-            this.guna2HtmlLabel14.Location = new System.Drawing.Point(61, 329);
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(61, 319);
             this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
             this.guna2HtmlLabel14.Size = new System.Drawing.Size(80, 19);
             this.guna2HtmlLabel14.TabIndex = 68;
@@ -488,7 +478,7 @@
             this.guna2Panel2.Controls.Add(this.lblDoctorName);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel23);
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(42, 354);
+            this.guna2Panel2.Location = new System.Drawing.Point(42, 344);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(835, 154);
             this.guna2Panel2.TabIndex = 67;
@@ -589,12 +579,22 @@
             this.guna2HtmlLabel23.TabIndex = 21;
             this.guna2HtmlLabel23.Text = "Docotor Name:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ClinicManagementSystem.UI.Properties.Resources.invoice;
+            this.pictureBox1.Location = new System.Drawing.Point(42, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 77);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmPaymentInfoCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(938, 833);
+            this.ClientSize = new System.Drawing.Size(938, 805);
             this.Controls.Add(this.guna2HtmlLabel14);
             this.Controls.Add(this.btnExportPDF);
             this.Controls.Add(this.guna2Panel2);
@@ -615,13 +615,13 @@
             this.Text = "Invoice Card";
             this.Load += new System.EventHandler(this.frmPaymentInfoCard_Load);
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PatientPanel.ResumeLayout(false);
             this.PatientPanel.PerformLayout();
             this.DoctorPanel.ResumeLayout(false);
             this.DoctorPanel.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

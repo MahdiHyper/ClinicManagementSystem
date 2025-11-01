@@ -343,6 +343,10 @@
     <None Include="Resources\file.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tomorrow.png" />
+    <None Include="Resources\doctorFemale.png" />
+    <None Include="Resources\doctorMale.png" />
+    <None Include="Resources\invoice.png" />
     <Content Include="Resources\LOGO_PNG.png" />
     <None Include="Resources\LOGO_PNG1.png" />
   </ItemGroup>
