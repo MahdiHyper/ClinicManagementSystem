@@ -22,7 +22,6 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
         private clsAppointment _Appointment;
         private int _AppID;
         private Dictionary<int, string> _specs;
-        private DataTable _BloodTypes;
         private enum enMode {AddNew = 0 , Update = 1};
         enMode _Mode = enMode.AddNew;
 
@@ -42,8 +41,6 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
         {
 
             _specs = clsDoctor.GetAllSpecializations();
-            _BloodTypes = clsPatient.GetAllBloodTypes();
-
             if (_Mode == enMode.AddNew)
             {
                 _EmptyTheForm();
@@ -172,18 +169,7 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
         private void _FillPatientInfo()
         {
             lblPatientFullName.Text = _Patient.PersonInfo.FullName;
-
-            string bloodTypeName = "N/A";
-            if (_BloodTypes != null)
-            {
-                DataRow[] rows = _BloodTypes.Select($"BloodTypeID = {_Patient.BloodTypeID}");
-                if (rows.Length > 0)
-                {
-                    bloodTypeName = rows[0]["BloodTypeName"].ToString();
-                }
-            }
-
-            lblBloodeType.Text = bloodTypeName;
+            lblBloodeType.Text = _Patient.GetBloodType();
             lblPhoneNumber.Text = _Patient.PersonInfo.PhoneNumber;
             lblPatientNotes.Text = _Patient.Notes;
             lblPatientGender.Text = _Patient.PersonInfo.GenderName;

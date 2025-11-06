@@ -178,6 +178,12 @@
     <Compile Include="PrescriptionForms\frmAddUpdatePrescription.Designer.cs">
       <DependentUpon>frmAddUpdatePrescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersForms\frmListUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     <EmbeddedResource Include="PrescriptionForms\frmAddUpdatePrescription.resx">
       <DependentUpon>frmAddUpdatePrescription.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Settings\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsersForms\frmListUsers.resx">
       <DependentUpon>frmListUsers.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +352,9 @@
     <None Include="Resources\file.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\MonkeyOpen.png" />
+    <None Include="Resources\MonkeyClose.png" />
+    <None Include="Resources\Settings.png" />
     <None Include="Resources\tomorrow.png" />
     <None Include="Resources\doctorFemale.png" />
     <None Include="Resources\doctorMale.png" />

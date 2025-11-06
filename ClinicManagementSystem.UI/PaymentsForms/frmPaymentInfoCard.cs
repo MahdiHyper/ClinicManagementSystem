@@ -21,7 +21,6 @@ namespace ClinicManagementSystem.UI.PaymentsForms
         private clsPayment _Payment;
         private int _PatientID;
         private clsPatient _Patient;
-        private DataTable _BloodTypes;
         private int _DoctorID;
         private clsDoctor _Doctor;
         private Dictionary<int, string> _AllSpecializations;
@@ -49,24 +48,6 @@ namespace ClinicManagementSystem.UI.PaymentsForms
 
         }
 
-        private string GetBloodType()
-        {
-            _BloodTypes = clsPatient.GetAllBloodTypes();
-
-            lblPatientFullName.Text = _Patient.PersonInfo.FullName.ToUpper();
-            string bloodTypeName = "N/A";
-
-            if (_BloodTypes != null)
-            {
-                DataRow[] rows = _BloodTypes.Select($"BloodTypeID = {_Patient.BloodTypeID}");
-                if (rows.Length > 0)
-                {
-                    bloodTypeName = rows[0]["BloodTypeName"].ToString();
-                }
-            }
-
-            return bloodTypeName;
-        }
         private void _GetAndFillPatientInfo()
         {
             _PatientID = clsPayment.GetPatientIdByPaymentID(_PaymentID);
@@ -80,7 +61,7 @@ namespace ClinicManagementSystem.UI.PaymentsForms
                 return;
             }
 
-            lblBloodeType.Text = GetBloodType();
+            lblBloodeType.Text = _Patient.GetBloodType();
             lblPhoneNumber.Text = _Patient.PersonInfo.PhoneNumber;
             lblPatientGender.Text = _Patient.PersonInfo.GenderName;
             lblPatientNotes.Text = _Patient.Notes.ToString();
@@ -196,7 +177,7 @@ namespace ClinicManagementSystem.UI.PaymentsForms
                 patientTable.AddCell(new Phrase(_Patient.PersonInfo.FullName, normalFont));
 
                 patientTable.AddCell(new Phrase("Blood Type:", boldFont));
-                patientTable.AddCell(new Phrase(GetBloodType(), normalFont));
+                patientTable.AddCell(new Phrase(_Patient.GetBloodType(), normalFont));
 
                 patientTable.AddCell(new Phrase("Phone:", boldFont));
                 patientTable.AddCell(new Phrase(_Patient.PersonInfo.PhoneNumber, normalFont));

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdateAppointment));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnClearOrReset = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -79,14 +78,15 @@
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.lblAppID = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DoctorPanel.SuspendLayout();
             this.PatientPanel.SuspendLayout();
             this.DatePanel.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -107,20 +107,10 @@
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(191)))), ((int)(((byte)(193)))));
             this.lblTitle.Location = new System.Drawing.Point(3, 16);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(448, 46);
+            this.lblTitle.Size = new System.Drawing.Size(445, 46);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "New Appointment";
             this.lblTitle.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 77);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
             // 
             // btnSave
             // 
@@ -789,11 +779,21 @@
             this.lblAppID.BackColor = System.Drawing.Color.Transparent;
             this.lblAppID.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.lblAppID.Location = new System.Drawing.Point(715, 69);
+            this.lblAppID.Location = new System.Drawing.Point(708, 69);
             this.lblAppID.Name = "lblAppID";
             this.lblAppID.Size = new System.Drawing.Size(32, 20);
             this.lblAppID.TabIndex = 31;
             this.lblAppID.Text = "N/A";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(36, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 77);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // frmAddUpdateAppointment
             // 
@@ -817,6 +817,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAddUpdateAppointment";
@@ -824,7 +825,6 @@
             this.Text = "Add New Appointment";
             this.Load += new System.EventHandler(this.frmAddUpdateAppointment_Load);
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.DoctorPanel.ResumeLayout(false);
             this.DoctorPanel.PerformLayout();
             this.PatientPanel.ResumeLayout(false);
@@ -835,6 +835,7 @@
             this.guna2Panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumMinute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

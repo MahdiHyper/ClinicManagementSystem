@@ -191,5 +191,12 @@ namespace ClinicManagementSystem.Logic
             return clsUserData.IsUserActive(UserID);
         }
 
+        public bool UpdatePassword(string NewPassword)
+        {
+            string HashedPassword = clsHelper.ComputeHash(NewPassword);
+
+            return clsUserData.UpdatePassword(this.UserID, HashedPassword);
+        }
+
     }
 }

@@ -18,7 +18,6 @@ namespace ClinicManagementSystem.UI.MedicalRecordsForms
         private clsPayment _Payment;
         private int _PatientID;
         private clsPatient _Patient;
-        private DataTable _BloodTypes;
         private int _DoctorID;
         private clsDoctor _Doctor;
 
@@ -75,21 +74,8 @@ namespace ClinicManagementSystem.UI.MedicalRecordsForms
                 return;
             }
 
-            _BloodTypes = clsPatient.GetAllBloodTypes();
-
             lblPatientFullName.Text = _Patient.PersonInfo.FullName;
-            string bloodTypeName = "N/A";
-
-            if (_BloodTypes != null)
-            {
-                DataRow[] rows = _BloodTypes.Select($"BloodTypeID = {_Patient.BloodTypeID}");
-                if (rows.Length > 0)
-                {
-                    bloodTypeName = rows[0]["BloodTypeName"].ToString();
-                }
-            }
-
-            lblBloodeType.Text = bloodTypeName;
+            lblBloodeType.Text = _Patient.GetBloodType();
             lblPhoneNumber.Text = _Patient.PersonInfo.PhoneNumber;
             lblPatientGender.Text = _Patient.PersonInfo.GenderName;
             lblPatientNotes.Text = _Patient.Notes.ToString();

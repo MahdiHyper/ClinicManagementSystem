@@ -5,6 +5,7 @@ using ClinicManagementSystem.UI.DoctorsForms;
 using ClinicManagementSystem.UI.MedicalRecordsForms;
 using ClinicManagementSystem.UI.PatientsForms;
 using ClinicManagementSystem.UI.PaymentsForms;
+using ClinicManagementSystem.UI.Settings;
 using ClinicManagmentSystem.UI;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace ClinicManagementSystem.UI
 {
@@ -79,10 +81,20 @@ namespace ClinicManagementSystem.UI
         }
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("HERE UserSettings");
-            _LoadAllFormData();
+            frmSettings frm = new frmSettings();
+            frm.PasswordUpdated += _PasswordUpdated;
+            frm.ShowDialog();
+
         }
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void _PasswordUpdated(bool IsUpdated)
+        {
+            clsHelper.CurrentUser = null;
+            timer1.Stop();
+
+            _frmLogin.Show();
+            this.Close();
+        }
+        public void btnLogout_Click(object sender, EventArgs e)
         {
             clsHelper.CurrentUser = null;
             timer1.Stop();
@@ -179,7 +191,7 @@ namespace ClinicManagementSystem.UI
 
                     lblPatientName.Text = Pt.PersonInfo.FullName;
                     lblDoctorName.Text = Dr.PersonInfo.FullName;
-                    lblPatientBloodType.Text = "In PRogresssssssss";
+                    lblPatientBloodType.Text = Pt.GetBloodType();
                     lblAppointmentDate.Text = app.AppointmentDateTime.ToString();
 
                     return;
@@ -198,6 +210,17 @@ namespace ClinicManagementSystem.UI
             frmAddUpdateAppointment frm = new frmAddUpdateAppointment(app.AppointmentID);
             frm.ShowDialog();
             _LoadAllFormData();
+        }
+
+    
+
+        private void frmMainScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            clsHelper.CurrentUser = null;
+            timer1.Stop();
+
+            _frmLogin.Show();
+           
         }
     }
 }

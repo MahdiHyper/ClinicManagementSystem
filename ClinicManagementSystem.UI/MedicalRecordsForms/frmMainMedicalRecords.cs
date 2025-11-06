@@ -61,17 +61,7 @@ namespace ClinicManagementSystem.UI.MedicalRecordsForms
         {
             lblPatientFullName.Text = _Patient.PersonInfo.FullName;
 
-            string bloodTypeName = "N/A";
-            if (_BloodTypes != null)
-            {
-                DataRow[] rows = _BloodTypes.Select($"BloodTypeID = {_Patient.BloodTypeID}");
-                if (rows.Length > 0)
-                {
-                    bloodTypeName = rows[0]["BloodTypeName"].ToString();
-                }
-            }
-
-            lblBloodeType.Text = bloodTypeName;
+            lblBloodeType.Text = _Patient.GetBloodType();
             lblPatientGender.Text = _Patient.PersonInfo.GenderName;
             lblPhoneNumber.Text = _Patient.PersonInfo.PhoneNumber;
             lblPatientNotes.Text = _Patient.Notes;

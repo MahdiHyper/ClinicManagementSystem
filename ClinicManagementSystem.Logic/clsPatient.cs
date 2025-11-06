@@ -155,5 +155,24 @@ namespace ClinicManagementSystem.Business
         {
             return clsPatientData.GetAllBloodTypes();
         }
+
+        public string GetBloodType()
+        {
+            DataTable dt = clsPatient.GetAllBloodTypes();
+
+            string BloodType = "";
+            int BloodTypeID = this.BloodTypeID;
+
+            if (dt != null)
+            {
+                DataRow[] row = dt.Select($"BloodTypeID = {BloodTypeID}");
+                if (row != null)
+                {
+                    BloodType = row[0]["BloodTypeName"].ToString();
+                }
+            }
+
+            return BloodType;
+        }
     }
 }
