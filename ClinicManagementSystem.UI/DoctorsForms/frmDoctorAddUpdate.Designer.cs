@@ -31,7 +31,6 @@
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnClearOrReset = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -58,10 +57,11 @@
             this.lblemadsfsd = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -82,15 +82,14 @@
             // 
             // lblID
             // 
-            this.lblID.AutoSize = false;
             this.lblID.BackColor = System.Drawing.Color.Transparent;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(50)))), ((int)(((byte)(88)))));
-            this.lblID.Location = new System.Drawing.Point(2, 13);
+            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
+            this.lblID.Location = new System.Drawing.Point(695, 80);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(188, 24);
+            this.lblID.Size = new System.Drawing.Size(34, 21);
             this.lblID.TabIndex = 1;
-            this.lblID.Text = "????";
+            this.lblID.Text = "N/A";
             this.lblID.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2Panel1
@@ -98,20 +97,10 @@
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.Controls.Add(this.lblTitle);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(283, 15);
+            this.guna2Panel1.Location = new System.Drawing.Point(283, 24);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(399, 77);
             this.guna2Panel1.TabIndex = 4;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BorderRadius = 15;
-            this.guna2Panel2.Controls.Add(this.lblID);
-            this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(36, 29);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(194, 48);
-            this.guna2Panel2.TabIndex = 133;
             // 
             // btnSave
             // 
@@ -126,9 +115,9 @@
             this.btnSave.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(68)))), ((int)(((byte)(212)))));
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(356, 559);
+            this.btnSave.Location = new System.Drawing.Point(367, 580);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(215, 83);
+            this.btnSave.Size = new System.Drawing.Size(215, 60);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -145,9 +134,9 @@
             this.btnClearOrReset.FillColor2 = System.Drawing.Color.Silver;
             this.btnClearOrReset.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearOrReset.ForeColor = System.Drawing.Color.White;
-            this.btnClearOrReset.Location = new System.Drawing.Point(153, 559);
+            this.btnClearOrReset.Location = new System.Drawing.Point(243, 580);
             this.btnClearOrReset.Name = "btnClearOrReset";
-            this.btnClearOrReset.Size = new System.Drawing.Size(185, 83);
+            this.btnClearOrReset.Size = new System.Drawing.Size(113, 60);
             this.btnClearOrReset.TabIndex = 5;
             this.btnClearOrReset.Text = "Clear";
             this.btnClearOrReset.Click += new System.EventHandler(this.btnClearOrReset_Click);
@@ -165,9 +154,9 @@
             this.btnClose.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(589, 559);
+            this.btnClose.Location = new System.Drawing.Point(593, 580);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(185, 83);
+            this.btnClose.Size = new System.Drawing.Size(113, 60);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -175,7 +164,9 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
+            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(191)))), ((int)(((byte)(193)))));
             this.guna2Panel3.BorderRadius = 20;
+            this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.cbSpecDoc);
             this.guna2Panel3.Controls.Add(this.guna2CustomGradientPanel2);
             this.guna2Panel3.Controls.Add(this.dtpDateOfBirth);
@@ -197,7 +188,7 @@
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel7);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
-            this.guna2Panel3.Location = new System.Drawing.Point(36, 121);
+            this.guna2Panel3.Location = new System.Drawing.Point(36, 140);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(894, 410);
             this.guna2Panel3.TabIndex = 10;
@@ -282,11 +273,11 @@
             this.dtpDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDateOfBirth.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(171, 156);
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(171, 150);
             this.dtpDateOfBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDateOfBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(245, 36);
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(245, 48);
             this.dtpDateOfBirth.TabIndex = 24;
             this.dtpDateOfBirth.Value = new System.DateTime(2025, 8, 27, 19, 26, 20, 682);
             // 
@@ -543,6 +534,16 @@
             this.guna2HtmlLabel2.TabIndex = 20;
             this.guna2HtmlLabel2.Text = "First Name :";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ClinicManagementSystem.UI.Properties.Resources.doctorMale1;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 77);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 44;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmDoctorAddUpdate
             // 
             this.AcceptButton = this.btnSave;
@@ -551,26 +552,28 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(975, 664);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnClearOrReset);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel3);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDoctorAddUpdate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add New Doctor";
             this.Load += new System.EventHandler(this.frmDoctorAddUpdate_Load);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -579,7 +582,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblID;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2GradientButton btnSave;
         private Guna.UI2.WinForms.Guna2GradientButton btnClearOrReset;
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
@@ -606,5 +608,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblemadsfsd;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

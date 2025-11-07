@@ -1,6 +1,6 @@
 ﻿using ClinicManagementSystem.Logic;
 using ClinicManagementSystem.UI.UserForms;
-using ClinicManagementSystem.UI.UsersForms;
+using iTextSharp.text.pdf.security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,31 +27,51 @@ namespace ClinicManagementSystem.UI
         }
         private void _dgvStyle (DataGridView dvg)
         {
-          
-            dgvListUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvListUsers.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 11F, FontStyle.Bold);
-            dgvListUsers.DefaultCellStyle.Font = new Font("Century Gothic", 10F, FontStyle.Regular);
+            dgvListUsers.ColumnHeadersHeight = 40;
+
+            dgvListUsers.ColumnHeadersVisible = true;
             dgvListUsers.EnableHeadersVisualStyles = false;
-            dgvListUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(14, 54, 106);
+
+            dgvListUsers.DefaultCellStyle.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            dgvListUsers.DefaultCellStyle.ForeColor = Color.FromArgb(22, 40, 73);
+            dgvListUsers.DefaultCellStyle.SelectionBackColor = Color.FromArgb(234, 50, 88);
+            dgvListUsers.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            dgvListUsers.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            dgvListUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(22, 40, 73);
             dgvListUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvListUsers.DefaultCellStyle.BackColor = Color.White;
-            dgvListUsers.DefaultCellStyle.ForeColor = Color.FromArgb(14, 54, 106);
+
+            dgvListUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvListUsers.ReadOnly = true;
             dgvListUsers.AllowUserToAddRows = false;
-            dgvListUsers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvListUsers.RowHeadersVisible = false;
+            dgvListUsers.RowTemplate.Height = 80;
 
+            dgvListUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dgvListUsers.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            if (dgvListUsers.Columns.Contains("UserID"))
+            {
+                dgvListUsers.Columns["UserID"].FillWeight = 80;
+                dgvListUsers.Columns["UserID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvListUsers.Columns["UserID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-         
-            dgvListUsers.ColumnHeadersHeight = 35;
+            }
+            if (dgvListUsers.Columns.Contains("UserName")) dgvListUsers.Columns["UserName"].FillWeight = 150;
+            if (dgvListUsers.Columns.Contains("FirstName")) dgvListUsers.Columns["FirstName"].FillWeight = 150;
+            if (dgvListUsers.Columns.Contains("LastName")) dgvListUsers.Columns["LastName"].FillWeight = 150;
+            if (dgvListUsers.Columns.Contains("PhoneNumber")) dgvListUsers.Columns["PhoneNumber"].FillWeight = 100;
+            if (dgvListUsers.Columns.Contains("Gender")) dgvListUsers.Columns["Gender"].FillWeight = 80;
+            if (dgvListUsers.Columns.Contains("IsActive")) dgvListUsers.Columns["IsActive"].FillWeight = 80;
 
-        
-            dgvListUsers.DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 150, 200);
-
+            if (dgvListUsers.Columns.Contains("UserID")) dgvListUsers.Columns["UserID"].HeaderText = "User ID";
+            if (dgvListUsers.Columns.Contains("UserName")) dgvListUsers.Columns["UserName"].HeaderText = "Username";
+            if (dgvListUsers.Columns.Contains("FirstName")) dgvListUsers.Columns["FirstName"].HeaderText = "First Name";
+            if (dgvListUsers.Columns.Contains("LastName")) dgvListUsers.Columns["LastName"].HeaderText = "Last Name";
+            if (dgvListUsers.Columns.Contains("PhoneNumber")) dgvListUsers.Columns["PhoneNumber"].HeaderText = "Phone Number";
+            if (dgvListUsers.Columns.Contains("IsActive")) dgvListUsers.Columns["IsActive"].HeaderText = "Is Active";
         }
         private void _RefreshDataList()
         {
-            
             _dtAllUsers = clsUser.GetAllUsers();
 
             if (_dtAllUsers.Rows.Count > 0)
@@ -66,16 +86,22 @@ namespace ClinicManagementSystem.UI
 
                 lblUsersNumber.Text = _dtAllUsers.Rows.Count.ToString();
 
-                dgvListUsers.CurrentCell = dgvListUsers.Rows[0].Cells[0];
+                dgvListUsers.Rows[0].Cells[0].Selected = true;
 
                 cbFilter.SelectedIndex = 0;
                 txtFilter.Text = string.Empty;
                 txtFilter.Enabled = false;
+
+                btnDeleteUser.Enabled = true;
+                btnEditUser.Enabled = true;
             }
             else
             {
                 MessageBox.Show("There is no Users here", "No Users", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+
+                btnDeleteUser.Enabled = false;
+                btnEditUser.Enabled = false;
             }
 
         }
@@ -88,16 +114,6 @@ namespace ClinicManagementSystem.UI
 
             _RefreshDataList();
         }
-
-        private void btnUserCard_Click(object sender, EventArgs e)
-        {
-            int UserID = (int)dgvListUsers.CurrentRow.Cells[0].Value;
-            frmUserCard frm = new frmUserCard(UserID);
-            frm.ShowDialog();
-
-            _RefreshDataList();
-        }
-
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
             int UserId = (int)dgvListUsers.CurrentRow.Cells[0].Value;
@@ -125,7 +141,6 @@ namespace ClinicManagementSystem.UI
             txtFilter.Text = string.Empty;
             txtFilter.Enabled = cbFilter.SelectedIndex != 0;
         }
-
         private void txtFilter_TextChanged_1(object sender, EventArgs e)
         {
             string txt = txtFilter.Text.Trim();
@@ -148,19 +163,28 @@ namespace ClinicManagementSystem.UI
             }
 
             lblUsersNumber.Text = dgvListUsers.RowCount.ToString();
-        }
 
+            if (dgvListUsers.RowCount > 0)
+            {
+                btnDeleteUser.Enabled = true;
+                btnEditUser.Enabled = true;
+            }
+            else
+            {
+                btnDeleteUser.Enabled = false;
+                btnEditUser.Enabled = false;
+            }
+        }
         private void txtFilter_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (cbFilter.SelectedIndex == 1)
             {
                 if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
                 {
-                    e.Handled = true; // منع إدخال الحرف
+                    e.Handled = true;
                 }
             }
         }
-
         private void btnAddUser_Click_1(object sender, EventArgs e)
         {
             frmAddUpdateUser frm = new frmAddUpdateUser();

@@ -32,7 +32,6 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnClearOrReset = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -59,10 +58,11 @@
             this.lblemadsfsd = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel2.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -78,9 +78,9 @@
             this.btnClose.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(605, 621);
+            this.btnClose.Location = new System.Drawing.Point(641, 657);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(185, 83);
+            this.btnClose.Size = new System.Drawing.Size(124, 61);
             this.btnClose.TabIndex = 135;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -97,9 +97,9 @@
             this.btnClearOrReset.FillColor2 = System.Drawing.Color.Silver;
             this.btnClearOrReset.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearOrReset.ForeColor = System.Drawing.Color.White;
-            this.btnClearOrReset.Location = new System.Drawing.Point(169, 621);
+            this.btnClearOrReset.Location = new System.Drawing.Point(238, 657);
             this.btnClearOrReset.Name = "btnClearOrReset";
-            this.btnClearOrReset.Size = new System.Drawing.Size(185, 83);
+            this.btnClearOrReset.Size = new System.Drawing.Size(124, 61);
             this.btnClearOrReset.TabIndex = 136;
             this.btnClearOrReset.Text = "Clear";
             this.btnClearOrReset.Click += new System.EventHandler(this.btnClearOrReset_Click);
@@ -117,34 +117,23 @@
             this.btnSave.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(68)))), ((int)(((byte)(212)))));
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(372, 621);
+            this.btnSave.Location = new System.Drawing.Point(375, 657);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(215, 83);
+            this.btnSave.Size = new System.Drawing.Size(253, 61);
             this.btnSave.TabIndex = 137;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BorderRadius = 15;
-            this.guna2Panel2.Controls.Add(this.lblID);
-            this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(39, 25);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(194, 48);
-            this.guna2Panel2.TabIndex = 139;
-            // 
             // lblID
             // 
-            this.lblID.AutoSize = false;
             this.lblID.BackColor = System.Drawing.Color.Transparent;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(50)))), ((int)(((byte)(88)))));
-            this.lblID.Location = new System.Drawing.Point(1, 13);
+            this.lblID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
+            this.lblID.Location = new System.Drawing.Point(700, 82);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(188, 24);
+            this.lblID.Size = new System.Drawing.Size(34, 21);
             this.lblID.TabIndex = 100;
-            this.lblID.Text = "????";
+            this.lblID.Text = "N/A";
             this.lblID.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2Panel1
@@ -152,7 +141,7 @@
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.Controls.Add(this.lblTitle);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(286, 11);
+            this.guna2Panel1.Location = new System.Drawing.Point(286, 26);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(399, 77);
             this.guna2Panel1.TabIndex = 134;
@@ -166,7 +155,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(191)))), ((int)(((byte)(193)))));
-            this.lblTitle.Location = new System.Drawing.Point(21, 16);
+            this.lblTitle.Location = new System.Drawing.Point(20, 16);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(362, 55);
             this.lblTitle.TabIndex = 22;
@@ -176,7 +165,9 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
+            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(191)))), ((int)(((byte)(193)))));
             this.guna2Panel3.BorderRadius = 20;
+            this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.cbBloodType);
             this.guna2Panel3.Controls.Add(this.guna2CustomGradientPanel2);
             this.guna2Panel3.Controls.Add(this.dtpDateOfBirth);
@@ -198,7 +189,7 @@
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel7);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
-            this.guna2Panel3.Location = new System.Drawing.Point(39, 113);
+            this.guna2Panel3.Location = new System.Drawing.Point(39, 142);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(894, 487);
             this.guna2Panel3.TabIndex = 140;
@@ -546,33 +537,45 @@
             this.guna2HtmlLabel2.TabIndex = 20;
             this.guna2HtmlLabel2.Text = "First Name :";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ClinicManagementSystem.UI.Properties.Resources.patient1;
+            this.pictureBox1.Location = new System.Drawing.Point(39, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 77);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 141;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAddUpdatePatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(979, 728);
+            this.ClientSize = new System.Drawing.Size(979, 742);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnClearOrReset);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAddUpdatePatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Update Patient";
             this.Load += new System.EventHandler(this.frmAddUpdatePatient_Load);
-            this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -581,7 +584,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
         private Guna.UI2.WinForms.Guna2GradientButton btnClearOrReset;
         private Guna.UI2.WinForms.Guna2GradientButton btnSave;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblID;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
@@ -608,5 +610,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblemadsfsd;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

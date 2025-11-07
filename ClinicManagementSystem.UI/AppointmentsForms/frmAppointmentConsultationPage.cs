@@ -265,6 +265,15 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
                     return;
                 }
 
+                _App.Status = 2;
+                if (!_App.Save())
+                {
+                    MessageBox.Show("There was error while saving this session",
+                    "Error updating this Appointment",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+
                 timer1.Stop();
 
                 lblTimer.Visible = false;

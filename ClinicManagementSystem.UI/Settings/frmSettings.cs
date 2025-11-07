@@ -45,7 +45,7 @@ namespace ClinicManagementSystem.UI.Settings
         }
         private void _LoadUserInfo()
         {
-            lblUserID.Text = _CurrentUser.UserID.ToString();
+            lblUserID.Text = "ID : " + _CurrentUser.UserID.ToString();
             lblUserFullName.Text = _CurrentUser.PersonInfo.FullName;
             lblUsername.Text = _CurrentUser.UserName.ToString();
             lblEmail.Text = _CurrentUser.PersonInfo.Email.ToString();

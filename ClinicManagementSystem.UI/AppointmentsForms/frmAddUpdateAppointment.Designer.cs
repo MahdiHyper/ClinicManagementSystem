@@ -94,7 +94,7 @@
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.Controls.Add(this.lblTitle);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(246, 12);
+            this.guna2Panel1.Location = new System.Drawing.Point(246, 25);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(451, 77);
             this.guna2Panel1.TabIndex = 3;
@@ -124,9 +124,9 @@
             this.btnSave.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(54)))), ((int)(((byte)(106)))));
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(316, 730);
+            this.btnSave.Location = new System.Drawing.Point(316, 743);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(278, 83);
+            this.btnSave.Size = new System.Drawing.Size(278, 66);
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -144,9 +144,9 @@
             this.btnClose.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(600, 730);
+            this.btnClose.Location = new System.Drawing.Point(600, 743);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(133, 83);
+            this.btnClose.Size = new System.Drawing.Size(133, 66);
             this.btnClose.TabIndex = 18;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -164,9 +164,9 @@
             this.btnClearOrReset.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.btnClearOrReset.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearOrReset.ForeColor = System.Drawing.Color.White;
-            this.btnClearOrReset.Location = new System.Drawing.Point(177, 730);
+            this.btnClearOrReset.Location = new System.Drawing.Point(177, 743);
             this.btnClearOrReset.Name = "btnClearOrReset";
-            this.btnClearOrReset.Size = new System.Drawing.Size(133, 83);
+            this.btnClearOrReset.Size = new System.Drawing.Size(133, 66);
             this.btnClearOrReset.TabIndex = 18;
             this.btnClearOrReset.Text = "Clear";
             this.btnClearOrReset.Click += new System.EventHandler(this.btnClearOrReset_Click);
@@ -187,7 +187,7 @@
             this.DoctorPanel.Controls.Add(this.lblDoctorFullName);
             this.DoctorPanel.Controls.Add(this.guna2HtmlLabel2);
             this.DoctorPanel.FillColor = System.Drawing.Color.White;
-            this.DoctorPanel.Location = new System.Drawing.Point(36, 154);
+            this.DoctorPanel.Location = new System.Drawing.Point(36, 172);
             this.DoctorPanel.Name = "DoctorPanel";
             this.DoctorPanel.Size = new System.Drawing.Size(386, 232);
             this.DoctorPanel.TabIndex = 4;
@@ -307,7 +307,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(50)))), ((int)(((byte)(88)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(55, 130);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(55, 148);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(135, 19);
             this.guna2HtmlLabel1.TabIndex = 20;
@@ -326,7 +326,7 @@
             this.btnChooseDoctor.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
             this.btnChooseDoctor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseDoctor.ForeColor = System.Drawing.Color.White;
-            this.btnChooseDoctor.Location = new System.Drawing.Point(36, 390);
+            this.btnChooseDoctor.Location = new System.Drawing.Point(36, 408);
             this.btnChooseDoctor.Name = "btnChooseDoctor";
             this.btnChooseDoctor.Size = new System.Drawing.Size(193, 44);
             this.btnChooseDoctor.TabIndex = 22;
@@ -346,7 +346,7 @@
             this.btnChoosePatient.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(200)))), ((int)(((byte)(193)))));
             this.btnChoosePatient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChoosePatient.ForeColor = System.Drawing.Color.White;
-            this.btnChoosePatient.Location = new System.Drawing.Point(509, 390);
+            this.btnChoosePatient.Location = new System.Drawing.Point(509, 408);
             this.btnChoosePatient.Name = "btnChoosePatient";
             this.btnChoosePatient.Size = new System.Drawing.Size(193, 44);
             this.btnChoosePatient.TabIndex = 25;
@@ -358,7 +358,7 @@
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(50)))), ((int)(((byte)(88)))));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(531, 130);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(531, 148);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(136, 19);
             this.guna2HtmlLabel7.TabIndex = 24;
@@ -380,7 +380,7 @@
             this.PatientPanel.Controls.Add(this.lblPatientFullName);
             this.PatientPanel.Controls.Add(this.guna2HtmlLabel17);
             this.PatientPanel.FillColor = System.Drawing.Color.White;
-            this.PatientPanel.Location = new System.Drawing.Point(509, 154);
+            this.PatientPanel.Location = new System.Drawing.Point(509, 172);
             this.PatientPanel.Name = "PatientPanel";
             this.PatientPanel.Size = new System.Drawing.Size(386, 232);
             this.PatientPanel.TabIndex = 23;
@@ -769,7 +769,7 @@
             // 
             // guna2VSeparator1
             // 
-            this.guna2VSeparator1.Location = new System.Drawing.Point(447, 169);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(447, 187);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
             this.guna2VSeparator1.Size = new System.Drawing.Size(37, 202);
             this.guna2VSeparator1.TabIndex = 32;
@@ -779,7 +779,7 @@
             this.lblAppID.BackColor = System.Drawing.Color.Transparent;
             this.lblAppID.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.lblAppID.Location = new System.Drawing.Point(708, 69);
+            this.lblAppID.Location = new System.Drawing.Point(708, 82);
             this.lblAppID.Name = "lblAppID";
             this.lblAppID.Size = new System.Drawing.Size(32, 20);
             this.lblAppID.TabIndex = 31;
@@ -788,7 +788,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 25);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 77);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

@@ -1,4 +1,5 @@
 ﻿using ClinicManagementSystem.Logic;
+using ClinicManagementSystem.UI.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -243,6 +244,23 @@ namespace ClinicManagementSystem.UI.UserForms
             }
 
 
+        }
+
+        private void rbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbFemale.Checked)
+            {
+                pbUser.Image = Resources.woman;
+            }
+        }
+
+        private void rbMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbMale.Checked)
+            {
+                pbUser.Image = Resources.man;
+
+            }
         }
     }
 }

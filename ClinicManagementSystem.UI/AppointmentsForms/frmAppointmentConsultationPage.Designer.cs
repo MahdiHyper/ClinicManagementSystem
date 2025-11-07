@@ -351,9 +351,9 @@
             this.btnStartOrStop.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(180)))), ((int)(((byte)(170)))));
             this.btnStartOrStop.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartOrStop.ForeColor = System.Drawing.Color.White;
-            this.btnStartOrStop.Location = new System.Drawing.Point(210, 710);
+            this.btnStartOrStop.Location = new System.Drawing.Point(217, 723);
             this.btnStartOrStop.Name = "btnStartOrStop";
-            this.btnStartOrStop.Size = new System.Drawing.Size(278, 83);
+            this.btnStartOrStop.Size = new System.Drawing.Size(265, 69);
             this.btnStartOrStop.TabIndex = 37;
             this.btnStartOrStop.Text = "Start Session";
             this.btnStartOrStop.Click += new System.EventHandler(this.btnStartOrStop_Click);
@@ -371,9 +371,9 @@
             this.btnClose.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(494, 710);
+            this.btnClose.Location = new System.Drawing.Point(493, 723);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(133, 83);
+            this.btnClose.Size = new System.Drawing.Size(120, 69);
             this.btnClose.TabIndex = 38;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);

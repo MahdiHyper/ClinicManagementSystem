@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dtpFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.dtpTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -40,22 +39,10 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2ShadowPanel1.SuspendLayout();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.AutoSize = false;
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(191)))), ((int)(((byte)(193)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(47, 17);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(176, 26);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Custom Date";
-            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dtpFrom
             // 
@@ -105,7 +92,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(40, 180);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(70, 180);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(49, 23);
             this.guna2HtmlLabel2.TabIndex = 36;
@@ -116,7 +103,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(60, 259);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(90, 259);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(29, 23);
             this.guna2HtmlLabel3.TabIndex = 37;
@@ -135,7 +122,7 @@
             // 
             // btnPicktheDate
             // 
-            this.btnPicktheDate.BorderRadius = 15;
+            this.btnPicktheDate.BorderRadius = 10;
             this.btnPicktheDate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPicktheDate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPicktheDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -145,9 +132,9 @@
             this.btnPicktheDate.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(220)))), ((int)(((byte)(193)))));
             this.btnPicktheDate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPicktheDate.ForeColor = System.Drawing.Color.White;
-            this.btnPicktheDate.Location = new System.Drawing.Point(138, 343);
+            this.btnPicktheDate.Location = new System.Drawing.Point(148, 351);
             this.btnPicktheDate.Name = "btnPicktheDate";
-            this.btnPicktheDate.Size = new System.Drawing.Size(186, 60);
+            this.btnPicktheDate.Size = new System.Drawing.Size(182, 50);
             this.btnPicktheDate.TabIndex = 39;
             this.btnPicktheDate.Text = "Pick the Date";
             this.btnPicktheDate.Click += new System.EventHandler(this.btnPicktheDate_Click);
@@ -155,7 +142,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnClose.BorderRadius = 15;
+            this.btnClose.BorderRadius = 10;
             this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -166,9 +153,9 @@
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.btnClose.Location = new System.Drawing.Point(342, 344);
+            this.btnClose.Location = new System.Drawing.Point(334, 351);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(102, 60);
+            this.btnClose.Size = new System.Drawing.Size(98, 50);
             this.btnClose.TabIndex = 40;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -185,26 +172,36 @@
             this.guna2Separator2.Size = new System.Drawing.Size(337, 10);
             this.guna2Separator2.TabIndex = 41;
             // 
-            // guna2ShadowPanel1
+            // guna2Panel1
             // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(150, 12);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.Radius = 6;
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.ShadowDepth = 30;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(280, 60);
-            this.guna2ShadowPanel1.TabIndex = 1;
+            this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2Panel1.FillColor = System.Drawing.Color.White;
+            this.guna2Panel1.Location = new System.Drawing.Point(148, 22);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(284, 63);
+            this.guna2Panel1.TabIndex = 42;
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.AutoSize = false;
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(191)))), ((int)(((byte)(193)))));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(5, 11);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(276, 44);
+            this.guna2HtmlLabel5.TabIndex = 0;
+            this.guna2HtmlLabel5.Text = "Custom Date";
+            this.guna2HtmlLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmCustomDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(592, 442);
-            this.Controls.Add(this.guna2ShadowPanel1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
+            this.ClientSize = new System.Drawing.Size(596, 442);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Separator2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPicktheDate);
@@ -221,15 +218,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Custom Date";
             this.Load += new System.EventHandler(this.frmCustomDate_Load);
-            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpFrom;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTo;
@@ -240,6 +235,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
     }
 }

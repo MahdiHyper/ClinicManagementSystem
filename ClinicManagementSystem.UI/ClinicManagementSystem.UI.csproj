@@ -198,12 +198,6 @@
     <Compile Include="UsersForms\frmAddUpdateUser.Designer.cs">
       <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsersForms\frmUserCard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UsersForms\frmUserCard.Designer.cs">
-      <DependentUpon>frmUserCard.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AppointmentsForms\frmMedicalRecordSummary.resx">
       <DependentUpon>frmMedicalRecordSummary.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,9 +280,6 @@
     <EmbeddedResource Include="UsersForms\frmAddUpdateUser.resx">
       <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsersForms\frmUserCard.resx">
-      <DependentUpon>frmUserCard.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -352,6 +343,9 @@
     <None Include="Resources\file.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\UsersList.png" />
+    <None Include="Resources\user1.png" />
+    <None Include="Resources\patient1.png" />
     <None Include="Resources\MonkeyOpen.png" />
     <None Include="Resources\MonkeyClose.png" />
     <None Include="Resources\Settings.png" />
@@ -359,6 +353,7 @@
     <None Include="Resources\doctorFemale.png" />
     <None Include="Resources\doctorMale.png" />
     <None Include="Resources\invoice.png" />
+    <None Include="Resources\doctorMale1.png" />
     <Content Include="Resources\LOGO_PNG.png" />
     <None Include="Resources\LOGO_PNG1.png" />
   </ItemGroup>

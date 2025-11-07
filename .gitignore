@@ -1,0 +1,18 @@
+﻿# Ignore build folders and binaries
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# Ignore user-specific settings
+.vs/
+*.user
+*.suo
+
+# Ignore system and environment files
+.env
+*.DS_Store
+Thumbs.db

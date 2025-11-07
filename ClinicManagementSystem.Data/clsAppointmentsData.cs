@@ -147,7 +147,8 @@ namespace ClinicManagementSystem.Data
                                   ,PatientName
                                   ,StatusText
                                   ,Notes
-                                  FROM View_AllAppointments;";
+                                  FROM View_AllAppointments
+                                    ORDER BY StartAt DESC";
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
                     try

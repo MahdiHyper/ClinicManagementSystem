@@ -49,6 +49,7 @@
             this.lblCount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPickDocotr = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctorsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -166,11 +167,11 @@
             this.btnDeleteDoctor.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDeleteDoctor.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteDoctor.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteDoctor.Location = new System.Drawing.Point(1130, 179);
+            this.btnDeleteDoctor.Location = new System.Drawing.Point(1169, 192);
             this.btnDeleteDoctor.Name = "btnDeleteDoctor";
-            this.btnDeleteDoctor.Size = new System.Drawing.Size(185, 83);
+            this.btnDeleteDoctor.Size = new System.Drawing.Size(140, 70);
             this.btnDeleteDoctor.TabIndex = 3;
-            this.btnDeleteDoctor.Text = "Delete Doctor";
+            this.btnDeleteDoctor.Text = "Delete";
             this.btnDeleteDoctor.Click += new System.EventHandler(this.btnDeleteDoctor_Click);
             // 
             // btnEditDoctor
@@ -185,9 +186,9 @@
             this.btnEditDoctor.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
             this.btnEditDoctor.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditDoctor.ForeColor = System.Drawing.Color.White;
-            this.btnEditDoctor.Location = new System.Drawing.Point(938, 179);
+            this.btnEditDoctor.Location = new System.Drawing.Point(990, 192);
             this.btnEditDoctor.Name = "btnEditDoctor";
-            this.btnEditDoctor.Size = new System.Drawing.Size(185, 83);
+            this.btnEditDoctor.Size = new System.Drawing.Size(173, 70);
             this.btnEditDoctor.TabIndex = 3;
             this.btnEditDoctor.Text = "Edit Doctor";
             this.btnEditDoctor.Click += new System.EventHandler(this.btnEditDoctor_Click);
@@ -204,11 +205,11 @@
             this.btnAddDoctor.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(54)))), ((int)(((byte)(106)))));
             this.btnAddDoctor.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDoctor.ForeColor = System.Drawing.Color.White;
-            this.btnAddDoctor.Location = new System.Drawing.Point(746, 179);
+            this.btnAddDoctor.Location = new System.Drawing.Point(811, 192);
             this.btnAddDoctor.Name = "btnAddDoctor";
-            this.btnAddDoctor.Size = new System.Drawing.Size(185, 83);
+            this.btnAddDoctor.Size = new System.Drawing.Size(173, 70);
             this.btnAddDoctor.TabIndex = 3;
-            this.btnAddDoctor.Text = "Add Doctor";
+            this.btnAddDoctor.Text = "+ Add Doctor";
             this.btnAddDoctor.Click += new System.EventHandler(this.btnAddDoctor_Click);
             // 
             // txtFilter
@@ -312,7 +313,7 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(50)))), ((int)(((byte)(88)))));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(537, 109);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(134, 19);
@@ -323,17 +324,17 @@
             // 
             this.lblCount.BackColor = System.Drawing.Color.Transparent;
             this.lblCount.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(50)))), ((int)(((byte)(88)))));
+            this.lblCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
             this.lblCount.Location = new System.Drawing.Point(672, 110);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(31, 18);
+            this.lblCount.Size = new System.Drawing.Size(17, 18);
             this.lblCount.TabIndex = 7;
-            this.lblCount.Text = "0000";
+            this.lblCount.Text = "00";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 77);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -352,12 +353,19 @@
             this.btnPickDocotr.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(220)))), ((int)(((byte)(193)))));
             this.btnPickDocotr.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPickDocotr.ForeColor = System.Drawing.Color.White;
-            this.btnPickDocotr.Location = new System.Drawing.Point(554, 179);
+            this.btnPickDocotr.Location = new System.Drawing.Point(632, 192);
             this.btnPickDocotr.Name = "btnPickDocotr";
-            this.btnPickDocotr.Size = new System.Drawing.Size(185, 83);
+            this.btnPickDocotr.Size = new System.Drawing.Size(173, 70);
             this.btnPickDocotr.TabIndex = 3;
             this.btnPickDocotr.Text = "Pick Doctor";
             this.btnPickDocotr.Click += new System.EventHandler(this.btnPickDocotr_Click);
+            // 
+            // guna2Separator2
+            // 
+            this.guna2Separator2.Location = new System.Drawing.Point(419, 132);
+            this.guna2Separator2.Name = "guna2Separator2";
+            this.guna2Separator2.Size = new System.Drawing.Size(409, 10);
+            this.guna2Separator2.TabIndex = 39;
             // 
             // frmDoctorsList
             // 
@@ -365,6 +373,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1321, 761);
+            this.Controls.Add(this.guna2Separator2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.guna2HtmlLabel2);
@@ -411,5 +420,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCount;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2GradientButton btnPickDocotr;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
     }
 }
