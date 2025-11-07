@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagementSystem.UI", "ClinicManagementSystem.UI.csproj", "{D4BBE5EE-77CE-41A4-A1EA-4A2B7CA58C07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagementSystem.UI", "ClinicManagementSystem.UI\ClinicManagementSystem.UI.csproj", "{D4BBE5EE-77CE-41A4-A1EA-4A2B7CA58C07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagementSystem.Data", "..\ClinicManagementSystem.Data\ClinicManagementSystem.Data.csproj", "{04260AB2-B9FC-4D67-A58E-3731651CFD3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagementSystem.Data", "ClinicManagementSystem.Data\ClinicManagementSystem.Data.csproj", "{04260AB2-B9FC-4D67-A58E-3731651CFD3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagementSystem.Logic", "..\ClinicManagementSystem.Logic\ClinicManagementSystem.Logic.csproj", "{A91F3BB0-2241-470A-A240-F31CBAC75A76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagementSystem.Logic", "ClinicManagementSystem.Logic\ClinicManagementSystem.Logic.csproj", "{A91F3BB0-2241-470A-A240-F31CBAC75A76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
