@@ -36,9 +36,15 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
         {
             if (dtpFrom.Value >= dtpTo.Value) 
             {
-                MessageBox.Show("You cant choose the (TO) Date before (FROM) Date",
-                    "ERROR choosing Date",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please make sure the 'To' date is after the 'From' date.",
+                "Invalid Date Range", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if ((dtpTo.Value - dtpFrom.Value).TotalDays > 90)
+            {
+                MessageBox.Show("Please choose a range less than 90 days.",
+                    "Date Range Too Long", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

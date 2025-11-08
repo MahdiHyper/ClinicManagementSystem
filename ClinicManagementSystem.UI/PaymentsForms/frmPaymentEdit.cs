@@ -78,8 +78,7 @@ namespace ClinicManagementSystem.UI.MedicalRecordsForms
             lblBloodeType.Text = _Patient.GetBloodType();
             lblPhoneNumber.Text = _Patient.PersonInfo.PhoneNumber;
             lblPatientGender.Text = _Patient.PersonInfo.GenderName;
-            lblPatientNotes.Text = _Patient.Notes.ToString();
-
+            lblPatientNotes.Text = _Patient.Notes.ToString() ?? "No notes";
         }
         private void _GetAndFillDoctorInfo()
         {
@@ -198,11 +197,6 @@ namespace ClinicManagementSystem.UI.MedicalRecordsForms
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void btnExportPDF_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Logic So0o0on .  . .", "So0on" , MessageBoxButtons.OK);
-            return;
         }
         private void btnSavePayment_Click(object sender, EventArgs e)
         {

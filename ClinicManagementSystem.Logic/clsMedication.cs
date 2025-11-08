@@ -60,8 +60,10 @@ namespace ClinicManagementSystem.Logic
                 med.MedicationName = medName;
                 med.MedicationSerialNumber = medSerial;
                 med.Description = medDesc;
+
+                return med;
             }
-            return med;
+            return null;
         }
 
     }

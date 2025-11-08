@@ -152,13 +152,13 @@ namespace ClinicManagementSystem.UI
             clsDoctor D3 = clsDoctor.GetDoctorByID(11);
 
             lblDoctorName1.Text = D1.PersonInfo.FullName;
-            lblSpec1.Text = "N/A";
+            lblSpec1.Text = D1.GetSpecializationName();
 
             lblDoctorName2.Text = D2.PersonInfo.FullName;
-            lblSpec2.Text = "N/A";
+            lblSpec2.Text = D2.GetSpecializationName();
 
             lblDoctorName3.Text = D3.PersonInfo.FullName;
-            lblSpec3.Text = "N/A";
+            lblSpec3.Text = D3.GetSpecializationName();
 
             pb1.Image = D1.PersonInfo.Gender == 1 ? Properties.Resources.doctorMale : Properties.Resources.doctorFemale;
             pb2.Image = D2.PersonInfo.Gender == 1 ? Properties.Resources.doctorMale : Properties.Resources.doctorFemale;
@@ -211,8 +211,6 @@ namespace ClinicManagementSystem.UI
             frm.ShowDialog();
             _LoadAllFormData();
         }
-
-    
 
         private void frmMainScreen_FormClosing(object sender, FormClosingEventArgs e)
         {

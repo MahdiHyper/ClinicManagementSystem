@@ -122,6 +122,8 @@ namespace ClinicManagementSystem.Logic
         {
             decimal total = clsPaymentData.GetTotalAmountReceived();
 
+            if (total <= 0) return "0";
+
             if (total >= 1000)
                 return $"{total / 1000:F1}K";
 

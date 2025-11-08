@@ -33,9 +33,7 @@ namespace ClinicManagementSystem.Logic
         {
             get
             {
-                if (this != null)
-                    return this.Gender == 0 ? "Female" : "Male";
-                return "";
+               return Gender == 1 ? "Male" : "Female";
             }
         }
 
@@ -68,7 +66,7 @@ namespace ClinicManagementSystem.Logic
             this.FirstName = "";
             this.SecondName = "";
             this.LastName = "";
-            this.DateOfBirth = DateTime.Now;
+            this.DateOfBirth = DateTime.MinValue;
             this.Email = "";
             this.Gender = -1;
             this.PhoneNumber = "";
@@ -77,7 +75,7 @@ namespace ClinicManagementSystem.Logic
         }
 
         public clsPerson(int PersonID, string FirstName, string SecondName, string LastName
-            , string Email, string PhoneNumber, DateTime DateOfBirth, short Gender)
+            , string Email, string PhoneNumber, DateTime DateOfBirth, int Gender)
         {
             this.PersonID = PersonID;
             this.FirstName = FirstName;

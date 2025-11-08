@@ -7,7 +7,7 @@ namespace ClinicManagementSystem.Data
 {
     static public class clsDataSettings
     {
-        public static string ConnectionString =
+        public static readonly string ConnectionString =
             "Server=.;Database=CMS;Integrated Security=True;TrustServerCertificate=True;";
     }
 }

@@ -236,9 +236,10 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
 
                 timer1.Start();
 
-                btnStartOrStop.Text = _btnMode == btnMode.Start ? "End Session" : "Start Session";
-                btnStartOrStop.FillColor2 = Color.Red;
-                _btnMode = btnMode.Stop;
+                _btnMode = _btnMode == btnMode.Start ? btnMode.Stop : btnMode.Start;
+                btnStartOrStop.Text = _btnMode == btnMode.Start ? "Start Session" : "End Session";
+                btnStartOrStop.FillColor2 = _btnMode == btnMode.Start ? Color.FromArgb(88, 180, 170) : Color.Red;
+
             }
             else 
             {

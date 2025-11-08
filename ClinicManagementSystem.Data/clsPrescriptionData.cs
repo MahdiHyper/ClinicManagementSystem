@@ -127,7 +127,7 @@ namespace ClinicManagementSystem.Data
         public static bool FindByID(int Id, ref int MedicalRecordID, ref DateTime IssueDate,
           ref int PatientID, ref string Notes)
         {
-            string Query = @"SELECT MedicalRecordID,
+            string Query = @"SELECT TOP 1 MedicalRecordID,
                         IssueDate , Notes , PatientID
                         FROM Prescriptions WHERE PrescriptionID = @PrescriptionID;";
 
@@ -165,7 +165,7 @@ namespace ClinicManagementSystem.Data
         public static bool FindByMedicalRecordID(int MedicalRecordID,ref int PrescriptionID, ref DateTime IssueDate,
           ref int PatientID, ref string Notes)
         {
-            string Query = @"SELECT PrescriptionID,
+            string Query = @"SELECT TOP 1 PrescriptionID,
                         IssueDate , Notes , PatientID
                         FROM Prescriptions WHERE MedicalRecordID = @MedicalRecordID;";
 

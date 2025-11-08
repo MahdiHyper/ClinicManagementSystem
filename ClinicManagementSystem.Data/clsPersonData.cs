@@ -215,10 +215,18 @@ VALUES (@FirstName, @SecondName, @LastName, @DateOfBirth, @PhoneNumber, @Email, 
             using (var cmd = new SqlCommand(
                 "SELECT 1 FROM dbo.People WHERE Email = @Email", con))
             {
-                cmd.Parameters.AddWithValue("@Email", email);
-                con.Open();
-                var obj = cmd.ExecuteScalar();
-                return obj != null;
+                try
+                {
+                    con.Open();
+                    var obj = cmd.ExecuteScalar();
+                    return obj != null;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Person (IsEmailExists) " + ex.Message);
+                    return false;
+                }
+
             }
         }
 

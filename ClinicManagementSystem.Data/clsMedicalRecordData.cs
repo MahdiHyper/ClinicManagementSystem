@@ -34,7 +34,7 @@ namespace ClinicManagementSystem.Data
                 if (int.TryParse(Convert.ToString(value), out Id))
                     return Id;
 
-                System.Diagnostics.Debug.WriteLine("⚠️ ERROR: Failed to convert new MedicalRecord ID.");
+                System.Diagnostics.Debug.WriteLine("ERROR: Failed to convert new MedicalRecord ID.");
                 return -1;
             }
         }
@@ -72,7 +72,7 @@ namespace ClinicManagementSystem.Data
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine("❌ ERROR updating MedicalRecord: " + ex.Message);
+                    System.Diagnostics.Debug.WriteLine("ERROR updating MedicalRecord: " + ex.Message);
                     return false;
                 }
             }
@@ -105,7 +105,7 @@ namespace ClinicManagementSystem.Data
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine("❌ ERROR GetMedicalRecordByID: " + ex.Message);
+                    System.Diagnostics.Debug.WriteLine("ERROR GetMedicalRecordByID: " + ex.Message);
                 }
 
                 return false;
@@ -139,7 +139,7 @@ namespace ClinicManagementSystem.Data
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine("❌ ERROR GetMedicalRecordByAppID: " + ex.Message);
+                    System.Diagnostics.Debug.WriteLine("ERROR GetMedicalRecordByAppID: " + ex.Message);
                 }
 
                 return false;

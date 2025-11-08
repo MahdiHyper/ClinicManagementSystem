@@ -468,9 +468,9 @@
             this.lbltodayAppointment.BackColor = System.Drawing.Color.White;
             this.lbltodayAppointment.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltodayAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.lbltodayAppointment.Location = new System.Drawing.Point(32, 169);
+            this.lbltodayAppointment.Location = new System.Drawing.Point(17, 169);
             this.lbltodayAppointment.Name = "lbltodayAppointment";
-            this.lbltodayAppointment.Size = new System.Drawing.Size(163, 38);
+            this.lbltodayAppointment.Size = new System.Drawing.Size(198, 38);
             this.lbltodayAppointment.TabIndex = 12;
             this.lbltodayAppointment.Text = "00";
             this.lbltodayAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1264,7 +1264,6 @@
             this.btnAppointments.Text = "Appointments";
             this.btnAppointments.TextOffset = new System.Drawing.Point(10, 0);
             this.btnAppointments.Click += new System.EventHandler(this.btnAppointments_Click);
-
             // 
             // pictureBox1
             // 

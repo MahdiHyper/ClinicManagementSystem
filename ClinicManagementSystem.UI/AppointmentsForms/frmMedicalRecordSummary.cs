@@ -25,7 +25,6 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
         private clsPrescription _Prescription;
         private int _PrescriptionID;
         private clsPatient _Patient;
-        private DataTable _BloodTypes;
 
         public frmMedicalRecordSummary(int MedicalRecord)
         {
@@ -103,23 +102,6 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
             _CheckMedicalRecord();
         }
 
-        private string GetBloodType()
-        {
-            _BloodTypes = clsPatient.GetAllBloodTypes();
-
-            string bloodTypeName = "N/A";
-
-            if (_BloodTypes != null)
-            {
-                DataRow[] rows = _BloodTypes.Select($"BloodTypeID = {_Patient.BloodTypeID}");
-                if (rows.Length > 0)
-                {
-                    bloodTypeName = rows[0]["BloodTypeName"].ToString();
-                }
-            }
-
-            return bloodTypeName;
-        }
         private void btnSendSummaryToPatient_Click(object sender, EventArgs e)
         {
             CreateSummaryPDF();
@@ -187,7 +169,7 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
                 string patientName = _Patient.PersonInfo?.FullName ?? "N/A";
                 string phone = _Patient.PersonInfo?.PhoneNumber ?? "N/A";
                 string ageStr = (_Patient.PersonInfo?.Age ?? 0).ToString();
-                string bloodType = GetBloodType();
+                string bloodType = _Patient.GetBloodType();
 
                 PdfPTable patientTable = new PdfPTable(2);
                 patientTable.SpacingBefore = 20f;
@@ -284,7 +266,6 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
                             itemsTable.AddCell(cell);
                         }
 
-                        // تعبئة الصفوف من الـ DataTable
                         foreach (DataRow row in dtItems.Rows)
                         {
                             itemsTable.AddCell(new Phrase(row["MedicationName"]?.ToString() ?? "-", normalFont));

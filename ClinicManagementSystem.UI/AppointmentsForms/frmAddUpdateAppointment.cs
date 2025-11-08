@@ -246,7 +246,7 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
                 }
             }
 
-            if ((GetFinalDate() > DateTime.Now) && rbCompleted.Checked)
+            if ((GetFinalDate() > DateTime.Now.AddMinutes(-5)) && rbCompleted.Checked)
             {
                 if (MessageBox.Show("Are you sure you want to check complete in future date ?",
                                     "complete warning",
@@ -335,15 +335,15 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
 
             if (rbScheduled.Checked)
             {
-                _Appointment.Status = 1;
+                _Appointment.Status = (int)clsAppointment.enAppointmentStatus.Scheduled;
             }
             else if (rbCompleted.Checked)
             {
-                _Appointment.Status = 2;
+                _Appointment.Status = (int)clsAppointment.enAppointmentStatus.Completed;
             }
             else
             {
-                _Appointment.Status = 3;
+                _Appointment.Status = (int)clsAppointment.enAppointmentStatus.Cancelled;
             }
 
             string notes = txtNotes.Text.Trim();

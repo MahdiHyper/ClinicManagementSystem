@@ -160,12 +160,6 @@
     <Compile Include="PaymentsForms\frmPaymentInfoCard.Designer.cs">
       <DependentUpon>frmPaymentInfoCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="PeopleForms\ctrlPersonInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PeopleForms\ctrlPersonInfo.Designer.cs">
-      <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="PrescriptionForms\frmAddPrescriptionItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,9 +245,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentsForms\frmPaymentInfoCard.resx">
       <DependentUpon>frmPaymentInfoCard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PeopleForms\ctrlPersonInfo.resx">
-      <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrescriptionForms\frmAddPrescriptionItem.resx">
       <DependentUpon>frmAddPrescriptionItem.cs</DependentUpon>

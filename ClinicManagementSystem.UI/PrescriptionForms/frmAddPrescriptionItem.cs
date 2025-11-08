@@ -120,6 +120,12 @@ namespace ClinicManagementSystem.UI.PrescriptionForms
                 return false;
             }
 
+            if (!double.TryParse(txtDosage.Text, out double dosage) || dosage <= 0)
+            {
+                MessageBox.Show("Please enter a valid dosage greater than zero");
+                return false;
+            }
+
             if (_Medicine == null || _MedicineID < 1)
             {
                 MessageBox.Show("Please Choose a medicine for the prescription",
@@ -153,14 +159,13 @@ namespace ClinicManagementSystem.UI.PrescriptionForms
                 return;
             }
 
+            MessageBox.Show("New medicine added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
         private void txtDosage_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
                 e.Handled = true;
-            }
         }
     }
 }

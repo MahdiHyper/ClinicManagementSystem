@@ -132,7 +132,8 @@ namespace ClinicManagementSystem.Data
                             Notes
                             FROM Patients
                             INNER JOIN People ON Patients.PersonID = People.PersonID
-                            INNER JOIN BloodTypes ON Patients.BloodTypeID = BloodTypes.BloodTypeID;";
+                            INNER JOIN BloodTypes ON Patients.BloodTypeID = BloodTypes.BloodTypeID
+                            ORDER BY FirstName;";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(Query, connection))

@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System;
-using System.Linq;
 
 namespace ClinicManagementSystem.Data
 {
@@ -10,17 +9,14 @@ namespace ClinicManagementSystem.Data
     {
         private static string ConnectionString = clsDataSettings.ConnectionString;
 
-        public static int AddNewUser(int PersonID, string UserName, string PasswordHash
-            , bool IsActive)
+        public static int AddNewUser(int PersonID, string UserName, string PasswordHash, bool IsActive)
         {
             int UserID = -1;
 
             string Query = @"
                 INSERT INTO Users (PersonID, UserName, PasswordHash, IsActive)
                 VALUES (@PersonID, @UserName, @PasswordHash, @IsActive);
-    
                 SELECT SCOPE_IDENTITY();";
-
 
             using (SqlConnection Connect = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(Query, Connect))
@@ -33,32 +29,22 @@ namespace ClinicManagementSystem.Data
                 try
                 {
                     Connect.Open();
-
                     object ID = cmd.ExecuteScalar();
                     if (ID != null && int.TryParse(ID.ToString(), out int NewID))
-                    {
                         UserID = NewID;
-                    }
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine("SQL ERROR in AddNewUser: " + ex.Message);
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (AddNew): " + ex.Message);
                 }
-
             }
             return UserID;
-
         }
 
         public static bool UpdateUser(int UserID, string UserName, bool IsActive)
         {
             int RowsAffected = 0;
-
-            string Query = @"UPDATE Users 
-                           SET 
-                            UserName = @UserName
-                           ,IsActive = @IsActive
-                           WHERE UserID = @UserID;";
+            string Query = @"UPDATE Users SET UserName = @UserName, IsActive = @IsActive WHERE UserID = @UserID;";
 
             using (SqlConnection Connect = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(Query, Connect))
@@ -67,18 +53,15 @@ namespace ClinicManagementSystem.Data
                 cmd.Parameters.AddWithValue("@UserName", UserName);
                 cmd.Parameters.AddWithValue("@IsActive", IsActive);
 
-
                 try
                 {
                     Connect.Open();
                     RowsAffected = cmd.ExecuteNonQuery();
-
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine($"Error Database - User (Update): {ex.Message}");
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (Update): " + ex.Message);
                 }
-
             }
             return RowsAffected > 0;
         }
@@ -86,9 +69,7 @@ namespace ClinicManagementSystem.Data
         public static bool DeleteUser(int UserID)
         {
             int RowsAffected = 0;
-
-            string Query = @"DELETE FROM Users
-                         WHERE UserID = @UserID;";
+            string Query = @"DELETE FROM Users WHERE UserID = @UserID;";
 
             using (SqlConnection Connect = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(Query, Connect))
@@ -98,25 +79,19 @@ namespace ClinicManagementSystem.Data
                 try
                 {
                     Connect.Open();
-
                     RowsAffected = cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine($"ERROR Database - User (Delete) : {ex.Message}");
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (Delete): " + ex.Message);
                 }
-
             }
-
-
             return RowsAffected > 0;
         }
 
-        public static bool FindUserByUserID(int UserID, ref int PersonID
-            , ref string UserName, ref bool IsActive)
+        public static bool FindUserByUserID(int UserID, ref int PersonID, ref string UserName, ref bool IsActive)
         {
             bool IsFound = false;
-
             string Query = @"SELECT * FROM Users WHERE UserID = @UserID;";
 
             using (SqlConnection Connect = new SqlConnection(ConnectionString))
@@ -127,7 +102,6 @@ namespace ClinicManagementSystem.Data
                 try
                 {
                     Connect.Open();
-
                     using (SqlDataReader Reader = cmd.ExecuteReader())
                     {
                         if (Reader.Read())
@@ -141,30 +115,25 @@ namespace ClinicManagementSystem.Data
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine("DataBase : Faild to Find User with UserID = " + ex.Message);
-
-                    IsFound = false; ;
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (FindByUserID): " + ex.Message);
                 }
             }
             return IsFound;
         }
 
-        public static bool FindUserByUserName (string UserName, ref int UserID,
-            ref int  PersonID, ref bool  IsActive)
+        public static bool FindUserByUserName(string UserName, ref int UserID, ref int PersonID, ref bool IsActive)
         {
             bool IsFound = false;
-
-            string Query = "SELECT UserID, PersonID, IsActive FROM Users WHERE UserName = @UserName";
+            string Query = "SELECT TOP 1 UserID, PersonID, IsActive FROM Users WHERE UserName = @UserName;";
 
             using (SqlConnection Connect = new SqlConnection(ConnectionString))
-            using (SqlCommand cmd = new SqlCommand( Query, Connect))
+            using (SqlCommand cmd = new SqlCommand(Query, Connect))
             {
-                cmd.Parameters.AddWithValue ("@UserName", UserName);
+                cmd.Parameters.AddWithValue("@UserName", UserName);
 
                 try
                 {
                     Connect.Open();
-
                     using (SqlDataReader Reader = cmd.ExecuteReader())
                     {
                         if (Reader.Read())
@@ -175,24 +144,19 @@ namespace ClinicManagementSystem.Data
                             IsFound = true;
                         }
                     }
-
                 }
                 catch (Exception ex)
                 {
-                    IsFound = false;
-                    System.Diagnostics.Debug.WriteLine("Database - Users (FindUserByUserName) " + ex);
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (FindByUserName): " + ex.Message);
                 }
             }
-
             return IsFound;
         }
 
         public static bool LoginByUserNameAndPassword(string UserName, string PasswordHash)
         {
             bool IsFound = false;
-
-            string Query = @"SELECT 1 FROM Users
-                          WHERE UserName = @UserName AND PasswordHash = @PasswordHash;";
+            string Query = @"SELECT TOP 1 1 FROM Users WHERE UserName = @UserName AND PasswordHash = @PasswordHash;";
 
             using (SqlConnection Connect = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(Query, Connect))
@@ -203,74 +167,63 @@ namespace ClinicManagementSystem.Data
                 try
                 {
                     Connect.Open();
-
                     object result = cmd.ExecuteScalar();
-
                     IsFound = (result != null);
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine("Database - Users Login " + ex.Message);
-                    IsFound = false;
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (Login): " + ex.Message);
                 }
-
             }
             return IsFound;
         }
 
         public static DataTable GetAllUsers()
         {
-            string Query = "SELECT * FROM View_UsersInfo;";
             DataTable dt = new DataTable();
+            string Query = "SELECT * FROM View_UsersInfo;";
 
-            using (var Connect = new SqlConnection(ConnectionString))
-            using (var cmd = new SqlCommand(Query, Connect))
+            using (SqlConnection Connect = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(Query, Connect))
             {
-
                 try
                 {
                     Connect.Open();
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.HasRows)
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        dt.Load(reader);
+                        if (reader.HasRows)
+                            dt.Load(reader);
                     }
-
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine("Database - Users : " + ex.Message);
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (GetAll): " + ex.Message);
                 }
-
-                return dt;
-
             }
+            return dt;
         }
 
         public static bool IsUserNameTaken(string UserName)
         {
             string Query = "SELECT 1 FROM Users WHERE UserName = @UserName;";
-
             object Row = null;
 
             using (SqlConnection Connect = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(Query, Connect))
             {
                 cmd.Parameters.AddWithValue("@UserName", UserName);
-              
+
                 try
                 {
                     Connect.Open();
                     Row = cmd.ExecuteScalar();
-
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine("Database - Users :" + ex.Message);
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (IsUserNameTaken): " + ex.Message);
                 }
             }
-            return Row != null; 
+            return Row != null;
         }
 
         public static bool UpdatePassword(int UserID, string NewPasswordHash)
@@ -291,17 +244,15 @@ namespace ClinicManagementSystem.Data
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine($"Error Database  - User (UpdatePass) : {ex.Message}");
-                    return false;
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (UpdatePassword): " + ex.Message);
                 }
             }
-
             return rowsAffected > 0;
         }
 
         public static bool IsUserActive(int UserID)
         {
-            string Query = "SELECT COUNT(*) FROM Users WHERE UserID = @UserID AND IsActive = 1";
+            string Query = "SELECT 1 FROM Users WHERE UserID = @UserID AND IsActive = 1;";
 
             using (SqlConnection Connect = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(Query, Connect))
@@ -311,17 +262,15 @@ namespace ClinicManagementSystem.Data
                 try
                 {
                     Connect.Open();
-                    int count = (int)cmd.ExecuteScalar();
-                    return count > 0;
+                    object result = cmd.ExecuteScalar();
+                    return result != null;
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine($"Database - Users(IsUserActive): {ex.Message}");
+                    System.Diagnostics.Debug.WriteLine("ERROR Database - Users (IsUserActive): " + ex.Message);
                     return false;
                 }
             }
         }
-
-        
     }
 }

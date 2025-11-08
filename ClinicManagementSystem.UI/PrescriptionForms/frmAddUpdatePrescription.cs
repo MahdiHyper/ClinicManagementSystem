@@ -200,7 +200,7 @@ namespace ClinicManagementSystem.UI.PrescriptionForms
             lblBloodeType.Text = BloodType;
             lblPhoneNumber.Text = _Patient.PersonInfo.PhoneNumber;
             lblPatientGender.Text = _Patient.PersonInfo.GenderName;
-            lblPatientNotes.Text = _Patient.Notes;
+            lblPatientNotes.Text = _Patient.Notes ?? "No notes available";
 
         }
         private void _FillPrescriptionInfo()
@@ -474,6 +474,9 @@ namespace ClinicManagementSystem.UI.PrescriptionForms
                  "Error Save", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            MessageBox.Show("Item deleted successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void btnAddItem_Click(object sender, EventArgs e)
         {

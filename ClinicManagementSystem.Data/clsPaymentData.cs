@@ -78,7 +78,7 @@ namespace ClinicManagementSystem.Data
         public static bool GetPaymentByID(int PaymentID, ref double PaymentAmount, ref double PaymentReceived,
         ref DateTime PaymentDate)
         {
-            string Query = @"SELECT PaymentAmount , PaymentReceived , PaymentDate
+            string Query = @"SELECT TOP 1 PaymentAmount , PaymentReceived , PaymentDate
                      FROM dbo.Payments
                      WHERE PaymentID = @PaymentID;";
 
@@ -94,8 +94,8 @@ namespace ClinicManagementSystem.Data
                     {
                         if (reader.Read())
                         {
-                            PaymentAmount = Convert.ToDouble(reader["PaymentAmount"]);   // ✅
-                            PaymentReceived = Convert.ToDouble(reader["PaymentReceived"]); // ✅
+                            PaymentAmount = Convert.ToDouble(reader["PaymentAmount"]);   
+                            PaymentReceived = Convert.ToDouble(reader["PaymentReceived"]);
                             PaymentDate = Convert.ToDateTime(reader["PaymentDate"]);
                             return true;
                         }
@@ -142,7 +142,7 @@ namespace ClinicManagementSystem.Data
         {
             int PaitentID = -1;
 
-            string Query = @"SELECT PatientID FROM 
+            string Query = @"SELECT TOP 1 PatientID FROM 
                             Payments INNER JOIN 
                             Appointments ON Appointments.PaymentID = Payments.PaymentID
                             WHERE Payments.PaymentID = @PaymentID
@@ -175,7 +175,7 @@ namespace ClinicManagementSystem.Data
         {
             int DoctorID = -1;
 
-            string Query = @"SELECT DoctorID FROM 
+            string Query = @"SELECT TOP 1 DoctorID FROM 
                             Payments INNER JOIN 
                             Appointments ON Appointments.PaymentID = Payments.PaymentID
                             WHERE Payments.PaymentID = @PaymentID

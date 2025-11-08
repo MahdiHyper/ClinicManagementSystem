@@ -25,12 +25,12 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
         private void frmMainAppointmentsPage_Load(object sender, EventArgs e)
         {
             _LoadInfoToFilter();
+            _dt = clsAppointment.GetAllAppointments();
             _LoadDataToGridView();
             lblDateFilterInfo.Text = "No Date Filter";
         }
         private void _LoadDataToGridView()
         {
-            _dt = clsAppointment.GetAllAppointments();
             dgvAppointmentsList.DataSource = _dt;
 
             if (_dt.Rows.Count > 0)
@@ -115,6 +115,12 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
                 cbFilter.SelectedIndex = 0;
             }
         }
+        private void _LoadDataToGridViewCustomDate(DateTime d1, DateTime d2)
+        {
+            _dt = clsAppointment.GetAppointmentsInRange(d1, d2);
+            _LoadDataToGridView();
+        }
+
         private int _GetSelectedRowID()
         {
             if (dgvAppointmentsList.Rows.Count == 0) return 0;
@@ -189,8 +195,14 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
         }
         private void _ResetAllFilters()
         {
-            _dt.DefaultView.RowFilter = null;
+            _dt = clsAppointment.GetAllAppointments();
+
             _LoadDataToGridView();
+
+            cbFilter.SelectedIndex = 0;
+            txtFilter.Text = string.Empty;
+            txtFilter.Visible = false;
+            lblDateFilterInfo.Text = "No Date Filter";
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -277,42 +289,24 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
             _LoadDataToGridViewCustomDate(_Date1, _Date2);
             lblDateFilterInfo.Text = $"Appointments from {_Date1.Date.ToShortDateString()} to {_Date2.Date.ToShortDateString()}";
         }
-        private void _LoadDataToGridViewCustomDate(DateTime d1, DateTime d2)
+
+        private void dgvAppointmentsList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            _dt = clsAppointment.GetAppointmentsInRange(d1, d2);
-            dgvAppointmentsList.DataSource = _dt;
-
-            if (_dt.Rows.Count > 0)
+            if (dgvAppointmentsList.Columns[e.ColumnIndex].Name == "StatusText" && e.Value != null)
             {
-
-                btnAddApp.Enabled = true;
-                btnDeleteApp.Enabled = true;
-                btnEditApp.Enabled = true;
-                btnShowAppCard.Enabled = true;
-
-                _ApplyAppointmentsListGridStyle();
-
-                dgvAppointmentsList.Rows[0].Selected = true;
-
-                lblCount.Text = _dt.Rows.Count.ToString();
-                dgvAppointmentsList.SelectedRows[0].Selected = true;
-
-                _dt.DefaultView.RowFilter = null;
-                cbFilter.SelectedIndex = 0;
-                txtFilter.Text = string.Empty;
-                txtFilter.Visible = false;
-                lblDateFilterInfo.Text = "No Date Filter";
-
-            }
-            else
-            {
-                btnDeleteApp.Enabled = false;
-                btnEditApp.Enabled = false;
-                btnShowAppCard.Enabled = false;
-                lblCount.Text = _dt.Rows.Count.ToString();
-
+                switch (e.Value.ToString())
+                {
+                    case "Completed":
+                        e.CellStyle.ForeColor = Color.Green;
+                        break;
+                    case "Cancelled":
+                        e.CellStyle.ForeColor = Color.Red;
+                        break;
+                    case "Scheduled":
+                        e.CellStyle.ForeColor = Color.Blue;
+                        break;
+                }
             }
         }
-
     }
 }

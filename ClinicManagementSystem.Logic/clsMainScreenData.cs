@@ -14,7 +14,7 @@ namespace ClinicManagementSystem.Logic
         {
             DataTable _dt = clsUser.GetAllUsers();
 
-            if (_dt != null || _dt.Rows.Count > 0)
+            if (_dt != null && _dt.Rows.Count > 0)
             {
                 return Convert.ToString(_dt.Rows.Count);
             }
@@ -26,7 +26,7 @@ namespace ClinicManagementSystem.Logic
         {
             DataTable _dt = clsPatient.GetAllPatients();
 
-            if (_dt != null || _dt.Rows.Count > 0)
+            if (_dt != null && _dt.Rows.Count > 0)
             {
                 return Convert.ToString(_dt.Rows.Count);
 
@@ -38,7 +38,7 @@ namespace ClinicManagementSystem.Logic
         {
             DataTable _dt = clsDoctor.GetAllDoctors();
 
-            if (_dt != null || (_dt.Rows.Count > 0))
+            if (_dt != null && (_dt.Rows.Count > 0))
             {
                 return Convert.ToString(_dt.Rows.Count);
             }
@@ -52,12 +52,12 @@ namespace ClinicManagementSystem.Logic
             DateTime d2 = d1.AddHours(23).AddMinutes(59);
             DataTable _dt = clsAppointment.GetAppointmentsInRange(d1, d2);
 
-            if (_dt != null || _dt.Rows.Count > 0)
+            if (_dt != null && _dt.Rows.Count > 0)
             {
                 return Convert.ToString(_dt.Rows.Count);
             }
 
-            return "";
+            return "0";
         }
 
         public static string GetLastMonthIncome()

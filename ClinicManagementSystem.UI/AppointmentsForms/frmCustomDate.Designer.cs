@@ -41,6 +41,7 @@
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@
             this.dtpTo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpTo.Location = new System.Drawing.Point(135, 248);
+            this.dtpTo.Location = new System.Drawing.Point(135, 300);
             this.dtpTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpTo.Name = "dtpTo";
@@ -103,7 +104,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(40)))), ((int)(((byte)(73)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(90, 259);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(90, 314);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(29, 23);
             this.guna2HtmlLabel3.TabIndex = 37;
@@ -132,7 +133,7 @@
             this.btnPicktheDate.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(220)))), ((int)(((byte)(193)))));
             this.btnPicktheDate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPicktheDate.ForeColor = System.Drawing.Color.White;
-            this.btnPicktheDate.Location = new System.Drawing.Point(148, 351);
+            this.btnPicktheDate.Location = new System.Drawing.Point(143, 429);
             this.btnPicktheDate.Name = "btnPicktheDate";
             this.btnPicktheDate.Size = new System.Drawing.Size(182, 50);
             this.btnPicktheDate.TabIndex = 39;
@@ -153,7 +154,7 @@
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.btnClose.Location = new System.Drawing.Point(334, 351);
+            this.btnClose.Location = new System.Drawing.Point(331, 429);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(98, 50);
             this.btnClose.TabIndex = 40;
@@ -167,7 +168,7 @@
             // 
             // guna2Separator2
             // 
-            this.guna2Separator2.Location = new System.Drawing.Point(135, 229);
+            this.guna2Separator2.Location = new System.Drawing.Point(135, 257);
             this.guna2Separator2.Name = "guna2Separator2";
             this.guna2Separator2.Size = new System.Drawing.Size(337, 10);
             this.guna2Separator2.TabIndex = 41;
@@ -195,12 +196,19 @@
             this.guna2HtmlLabel5.Text = "Custom Date";
             this.guna2HtmlLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // guna2Separator3
+            // 
+            this.guna2Separator3.Location = new System.Drawing.Point(63, 393);
+            this.guna2Separator3.Name = "guna2Separator3";
+            this.guna2Separator3.Size = new System.Drawing.Size(409, 10);
+            this.guna2Separator3.TabIndex = 34;
+            // 
             // frmCustomDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(596, 442);
+            this.ClientSize = new System.Drawing.Size(596, 511);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Separator2);
             this.Controls.Add(this.btnClose);
@@ -209,6 +217,7 @@
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.dtpTo);
+            this.Controls.Add(this.guna2Separator3);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.dtpFrom);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -237,5 +246,6 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
     }
 }

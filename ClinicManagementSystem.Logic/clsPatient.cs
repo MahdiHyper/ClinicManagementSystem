@@ -113,8 +113,11 @@ namespace ClinicManagementSystem.Business
                 }
                 this.PersonID = personID;
                 this.PersonInfo.PersonID = personID;
+            }else
+            {
+                return false;
             }
-            this.PatientID = clsPatientData.AddNewPatient(this.PersonID, this.BloodTypeID, this.Notes);
+                this.PatientID = clsPatientData.AddNewPatient(this.PersonID, this.BloodTypeID, this.Notes);
 
             if (this.PatientID != -1)
             {
@@ -166,7 +169,7 @@ namespace ClinicManagementSystem.Business
             if (dt != null)
             {
                 DataRow[] row = dt.Select($"BloodTypeID = {BloodTypeID}");
-                if (row != null)
+                if (row.Length > 0)
                 {
                     BloodType = row[0]["BloodTypeName"].ToString();
                 }

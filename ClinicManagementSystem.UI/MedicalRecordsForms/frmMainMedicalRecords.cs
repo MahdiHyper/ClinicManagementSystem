@@ -3,11 +3,14 @@ using ClinicManagementSystem.Logic;
 using ClinicManagementSystem.UI.AppointmentsForms;
 using ClinicManagementSystem.UI.PatientsForms;
 using ClinicManagementSystem.UI.PrescriptionForms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,13 +96,13 @@ namespace ClinicManagementSystem.UI.MedicalRecordsForms
             dgvMedicalRecords.ColumnHeadersVisible = true;
             dgvMedicalRecords.EnableHeadersVisualStyles = false;
 
-            dgvMedicalRecords.DefaultCellStyle.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            dgvMedicalRecords.DefaultCellStyle.Font = new System.Drawing.Font("Century Gothic", 10F, FontStyle.Bold);
             dgvMedicalRecords.DefaultCellStyle.ForeColor = Color.FromArgb(22, 40, 73);
             dgvMedicalRecords.DefaultCellStyle.SelectionBackColor = Color.FromArgb(234, 50, 88);
             dgvMedicalRecords.DefaultCellStyle.SelectionForeColor = Color.White;
 
 
-            dgvMedicalRecords.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
+            dgvMedicalRecords.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Century Gothic", 10F, FontStyle.Bold);
             dgvMedicalRecords.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(22, 40, 73);
             dgvMedicalRecords.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
@@ -158,11 +161,129 @@ namespace ClinicManagementSystem.UI.MedicalRecordsForms
                 }
             }
         }
+
         private void btnExportPDF_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("SoooOOOooon adding this feature",
-                    "sO0O0On", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            return;
+            try
+            {
+                if (dgvMedicalRecords.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a medical record first.", "No Record Selected",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int recordID = (int)dgvMedicalRecords.CurrentRow.Cells["MedicalRecordID"].Value;
+                clsMedicalRecord record = clsMedicalRecord.FindByID(recordID);
+                if (record == null)
+                {
+                    MessageBox.Show("Medical record not found.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                _Patient = clsPatient.GetPatientByID(record.PatientID);
+                if (_Patient == null)
+                {
+                    MessageBox.Show("Patient data not found.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF Files (*.pdf)|*.pdf";
+                sfd.FileName = $"MedicalRecord_{record.MedicalRecordID}_{_Patient.PersonInfo.FullName.Replace(' ', '_')}.pdf";
+
+                if (sfd.ShowDialog() != DialogResult.OK)
+                    return;
+
+                string filePath = sfd.FileName;
+
+                // إنشاء المستند
+                iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4, 36, 36, 36, 36);
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+                doc.Open();
+
+                // خطوط
+                iTextSharp.text.Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18, BaseColor.BLACK);
+                iTextSharp.text.Font boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12, BaseColor.BLACK);
+                iTextSharp.text.Font normalFont = FontFactory.GetFont(FontFactory.HELVETICA, 12, BaseColor.BLACK);
+                iTextSharp.text.Font smallGray = FontFactory.GetFont(FontFactory.HELVETICA, 9, BaseColor.DARK_GRAY);
+
+                // شعار
+                System.Drawing.Image netImg = Properties.Resources.LOGO_PNG;
+                using (var ms = new MemoryStream())
+                {
+                    netImg.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    iTextSharp.text.Image pdfImg = iTextSharp.text.Image.GetInstance(ms.ToArray());
+                    pdfImg.ScaleToFit(100f, 100f);
+                    pdfImg.Alignment = Element.ALIGN_LEFT;
+                    doc.Add(pdfImg);
+                }
+
+                // العنوان
+                Paragraph title = new Paragraph("Medical Record Summary", titleFont);
+                title.Alignment = Element.ALIGN_CENTER;
+                doc.Add(title);
+
+                doc.Add(new Paragraph(" "));
+                doc.Add(new Paragraph(" "));
+
+                // بيانات المريض
+                PdfPTable patientTable = new PdfPTable(2);
+                patientTable.WidthPercentage = 100;
+                patientTable.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
+                patientTable.AddCell(new Phrase("Patient Name:", boldFont));
+                patientTable.AddCell(new Phrase(_Patient.PersonInfo.FullName, normalFont));
+
+                patientTable.AddCell(new Phrase("Gender:", boldFont));
+                patientTable.AddCell(new Phrase(_Patient.PersonInfo.GenderName, normalFont));
+
+                patientTable.AddCell(new Phrase("Phone:", boldFont));
+                patientTable.AddCell(new Phrase(_Patient.PersonInfo.PhoneNumber ?? "-", normalFont));
+
+                patientTable.AddCell(new Phrase("Blood Type:", boldFont));
+                patientTable.AddCell(new Phrase(_Patient.GetBloodType(), normalFont));
+
+                doc.Add(patientTable);
+
+                doc.Add(new Paragraph(" "));
+                doc.Add(new Paragraph(" "));
+
+                // بيانات السجل
+                PdfPTable recordTable = new PdfPTable(2);
+                recordTable.WidthPercentage = 100;
+                recordTable.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
+                recordTable.AddCell(new Phrase("Diagnosis:", boldFont));
+                recordTable.AddCell(new Phrase(record.Diagnosis ?? "-", normalFont));
+
+                recordTable.AddCell(new Phrase("Diagnosis Date:", boldFont));
+                recordTable.AddCell(new Phrase(record.DiagnosisDate.ToShortDateString(), normalFont));
+
+                recordTable.AddCell(new Phrase("Notes:", boldFont));
+                recordTable.AddCell(new Phrase(record.Notes ?? "-", normalFont));
+
+                doc.Add(recordTable);
+
+                // التاريخ أسفل الصفحة
+                doc.Add(new Paragraph(" "));
+                ColumnText.ShowTextAligned(writer.DirectContent,
+                    Element.ALIGN_RIGHT,
+                    new Phrase("Generated on " + DateTime.Now.ToString("G"), smallGray),
+                    doc.PageSize.Width - 50, 30, 0);
+
+                doc.Close();
+                writer.Close();
+
+                MessageBox.Show("PDF exported successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start(filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error exporting PDF:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private int _GetSelectedRowID()

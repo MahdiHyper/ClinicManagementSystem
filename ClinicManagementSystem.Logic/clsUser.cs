@@ -123,7 +123,9 @@ namespace ClinicManagementSystem.Logic
         public static bool DeleteUser(int UserID)
         {
             clsUser _User = clsUser.FindUserByID(UserID);
-           
+
+            if (_User == null) return false;
+
             if (clsUserData.DeleteUser(UserID)) {
 
                 return clsPerson.Delete(_User.PersonID) ;

@@ -21,7 +21,7 @@ namespace ClinicManagementSystem.Logic
         {
             PrescriptionID = -1;
             MedicalRecordID = -1;
-            IssueDate = DateTime.Now;
+            IssueDate = DateTime.Today;
             Notes = string.Empty;
             PatientID = -1;
         }
@@ -65,7 +65,7 @@ namespace ClinicManagementSystem.Logic
         public static clsPrescription FindByID(int PrescriptionID)
         {
             int MedicalRecordID = -1;
-            DateTime IssueDate = DateTime.Now;
+            DateTime IssueDate = DateTime.MinValue;
             string Notes = "";
             int PatientID = -1;
 
@@ -87,7 +87,7 @@ namespace ClinicManagementSystem.Logic
         public static clsPrescription FindByMedicalRecordID (int MedicalRecordID)
         {
             int PrescriptionID = -1;
-            DateTime IssueDate = DateTime.Now;
+            DateTime IssueDate = DateTime.MinValue;
             string Notes = "";
             int PatientID = -1;
 

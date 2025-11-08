@@ -154,5 +154,18 @@ namespace ClinicManagementSystem.Logic
         public static System.Collections.Generic.Dictionary<int, string> GetAllSpecializations()
              => clsDoctorData.GetAllSpecializations();
 
+        public string GetSpecializationName()
+        {
+            int specID = this.SpecializationID;
+            var specializations = clsDoctor.GetAllSpecializations();
+
+            if (specializations != null && specializations.ContainsKey(specID))
+            {
+                return specializations[specID];
+            }
+
+            return string.Empty;
+        }
+
     }
 }
