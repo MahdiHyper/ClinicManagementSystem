@@ -1,127 +1,84 @@
-🏥 Clinic Management System
+Clinic Management System
 
-A desktop-based medical management system built with C# (Windows Forms) and SQL Server.
-The project helps clinics efficiently manage patients, appointments, medical records, prescriptions, and billing through a clean, layered architecture.
+Overview  
+Clinic Management System is a desktop application built to streamline and automate clinic operations.  
+It manages patients, doctors, appointments, medical records, prescriptions, and payments within a unified system.  
+The system is designed for small and medium-sized clinics to enhance efficiency, data accuracy, and patient care.
 
-📋 Overview
+------------------------------------------------------------
 
-This system is designed to simplify daily clinic operations by providing a centralized interface for doctors and staff.
-It allows creating and managing patient profiles, scheduling appointments, recording diagnoses, issuing prescriptions, and generating billing records — all in one place.
+Features  
+- Manage patients and doctors with complete personal and medical details.  
+- Schedule and track appointments efficiently.  
+- Maintain medical records with diagnosis history.  
+- Create and manage prescriptions with dosage details.  
+- Export invoices and prescriptions as PDF files.  
+- Secure user login and role-based access.  
+- Dashboard with key statistics and upcoming appointments.
 
-⚙️ Features
-👩‍⚕️ Patient Management
+------------------------------------------------------------
 
-Add, edit, delete, and search for patients.
+Architecture Overview  
+The project follows a three-layer architecture for better organization and scalability:
 
-Store complete personal and medical information.
+1. UI Layer (Windows Forms):  
+   Responsible for the graphical interface and user interactions.
 
-📅 Appointment Management
+2. Logic Layer:  
+   Contains the business logic and application rules.
 
-Schedule and manage appointments with date conflict validation.
+3. Data Access Layer:  
+   Handles database communication using SQL Server and ADO.NET.
 
-Start and end appointments dynamically.
+------------------------------------------------------------
 
-Link appointments to patient and doctor records.
+Technologies Used  
+- Programming Language: C# (.NET Framework)  
+- UI Framework: Windows Forms  
+- Database: Microsoft SQL Server  
+- Data Access: ADO.NET  
+- PDF Export: iTextSharp Library  
+- IDE: Visual Studio  
+- Version Control: Git and GitHub
 
-🧾 Medical Records
+------------------------------------------------------------
 
-Record diagnoses, symptoms, and doctor notes.
+Setup Instructions  
+1. Clone the repository from GitHub.  
+2. Open the solution file (ClinicManagementSystem.sln) in Visual Studio.  
+3. Restore NuGet packages if required.  
+4. Set up the SQL Server database using the provided script in the Database folder.  
+5. Update the connection string in the configuration class (clsDataSettings.cs) with your local database configuration.  
+6. Build and run the project.
 
-Automatically connect with the related appointment.
+------------------------------------------------------------
 
-View full medical history for each patient.
+Screenshots  
+(Add images or screenshots showing the main interface of the system)
+Suggested screenshots include:
+- Login screen  
+- Dashboard  
+- Appointments management  
+- Patient profile  
+- Prescription management  
+- Payment invoice screen  
 
-💊 Prescriptions
+------------------------------------------------------------
 
-Add prescriptions during an active session.
+Future Improvements  
+- Implement role-based permissions for admin and staff.  
+- Add online appointment booking via web API.  
+- Enable cloud synchronization for remote access.  
+- Add reporting and analytics dashboards.  
+- Improve UI design with modern .NET styling (WPF or .NET MAUI in future versions).
 
-Attach medicines and instructions to each record.
+------------------------------------------------------------
 
-View previous prescriptions through the medical record.
+Author  
+Developed by: Mahdi Al-Suleiman  
+GitHub Profile: https://github.com/MahdiHyper  
+LinkedIn Profile: https://www.linkedin.com/in/mahdi-alsuleiman-702560277/
 
-💰 Billing & Payments
+------------------------------------------------------------
 
-Create invoices linked to appointments.
-
-Record payment methods and amounts.
-
-Generate summaries for reporting.
-
-📈 Reports Dashboard (in progress)
-
-Overview of daily and monthly statistics.
-
-Quick insights like number of patients, today’s appointments, etc.
-
-🏗️ System Architecture
-
-The project follows a Layered Architecture (3-Tier Design):
-
-UI Layer (Windows Forms) – Handles user interaction and presentation.
-
-Business Logic Layer (BLL) – Contains core logic, validation, and rules.
-
-Data Access Layer (DAL) – Manages all communication with the SQL Server database.
-
-🧠 Technologies Used
-
-C# (.NET Framework / WinForms)
-
-Microsoft SQL Server
-
-ADO.NET
-
-Layered Architecture Design Pattern
-
-🗄️ Database Design (Summary)
-
-Main Tables:
-
-Patients
-
-Doctors
-
-Appointments
-
-MedicalRecords
-
-Prescriptions
-
-Payments
-
-Users
-
-Each module is connected logically (e.g., Appointment → MedicalRecord → Prescription → Payment).
-
-🚀 How to Run the Project
-
-Clone the repository:
-
-git clone https://github.com/yourusername/ClinicManagementSystem.git
-
-
-Open the solution in Visual Studio.
-
-Set up the database in SQL Server using the provided .sql script (if available).
-
-Update the connection string in App.config or DataAccessLayer as needed.
-
-Build and run the project.
-
-📸 Screenshots (Coming Soon)
-
-Will include UI previews for Patients, Appointments, Records, and Billing.
-
-🧾 Future Improvements
-
-Add role-based user authentication.
-
-Integrate advanced reporting system.
-
-Export invoices and records to PDF.
-
-Add cloud synchronization for multi-device access.
-
-👨‍💻 Author
-
-Mahdi Al-Suleiman
+This project represents a complete and production-ready clinic management solution demonstrating practical experience in software architecture, C#, Windows Forms, SQL Server, and system design principles.
