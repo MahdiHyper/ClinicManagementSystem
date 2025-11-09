@@ -147,9 +147,9 @@ namespace ClinicManagementSystem.UI
         }
         private void _LoadDoctorListData()
         {
-            clsDoctor D1 = clsDoctor.GetDoctorByID(9);
-            clsDoctor D2 = clsDoctor.GetDoctorByID(10);
-            clsDoctor D3 = clsDoctor.GetDoctorByID(11);
+            clsDoctor D1 = clsDoctor.GetDoctorByID(30);
+            clsDoctor D2 = clsDoctor.GetDoctorByID(31);
+            clsDoctor D3 = clsDoctor.GetDoctorByID(32);
 
             lblDoctorName1.Text = D1.PersonInfo.FullName;
             lblSpec1.Text = D1.GetSpecializationName();

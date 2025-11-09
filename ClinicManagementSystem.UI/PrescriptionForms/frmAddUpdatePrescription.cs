@@ -34,7 +34,7 @@ namespace ClinicManagementSystem.UI.PrescriptionForms
 
         private void frmAddUpdatePrescription_Load(object sender, EventArgs e)
         {
-            _MedicalRecord = clsMedicalRecord.FindByAppID(_MedicalRecordID);
+            _MedicalRecord = clsMedicalRecord.FindByID(_MedicalRecordID);
             if (_MedicalRecord == null)
             {
                 MessageBox.Show("Medical Record not found",
@@ -212,15 +212,24 @@ namespace ClinicManagementSystem.UI.PrescriptionForms
         }
         private void _SavingPrescription()
         {
-            _Prescription.Notes = txtPrescriptionNotes.Text;
-            if (!_Prescription.Save())
+            try
             {
-                MessageBox.Show("Error while Saving the Prescription",
-                                                        "Error saving Prescription",
-                                                        MessageBoxButtons.OK,
-                                                        MessageBoxIcon.Error);
-
-                return;
+                _Prescription.Notes = txtPrescriptionNotes.Text;
+                if (!_Prescription.Save())
+                {
+                    MessageBox.Show("Error while Saving the Prescription",
+                                    "Error saving Prescription",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error: " + ex.Message,
+                                "Error saving Prescription",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
         private string GetBloodType()
@@ -488,7 +497,8 @@ namespace ClinicManagementSystem.UI.PrescriptionForms
 
         private void frmAddUpdatePrescription_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _SavingPrescription();
+            if (_MedicalRecord != null) _SavingPrescription();
+
         }
     }
 }

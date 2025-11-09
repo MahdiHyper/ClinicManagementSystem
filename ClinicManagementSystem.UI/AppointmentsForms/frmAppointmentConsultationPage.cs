@@ -158,7 +158,17 @@ namespace ClinicManagementSystem.UI.AppointmentsForms
             if (clsMedicalRecord.IsApplinkedWithMedicalRecored(_AppID))
             {
                 MessageBox.Show("You can't start this Consolution again",
-                    "Can't star session again",
+                    "Can't start session again",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return false;
+            }
+
+            if (_App.Status == 3)
+            {
+                MessageBox.Show("You can't start the Session with canceld Appointment",
+                    "Can't start session",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 

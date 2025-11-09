@@ -53,15 +53,37 @@ Setup Instructions
 
 ------------------------------------------------------------
 
-Screenshots  
-(Add images or screenshots showing the main interface of the system)
-Suggested screenshots include:
-- Login screen  
-- Dashboard  
-- Appointments management  
-- Patient profile  
-- Prescription management  
-- Payment invoice screen  
+## Project Screenshots
+
+### Login Screen
+![Login Screen](./Images/1-Login.png)
+
+### Main Dashboard
+![Main Dashboard](./Images/2-Main.png)
+
+### Users Management
+![Users Management](./Images/3-Users.png)
+
+### Doctors List
+![Doctors List](./Images/4-Doctors.png)
+
+### Add New Patient
+![Add Patient](./Images/5-Patient.png)
+
+### Appointments
+![Appointments](./Images/6-App.png)
+
+### Consultation Session
+![Consultation](./Images/7-AppCons.png)
+
+### Prescription Page
+![Prescription](./Images/8-Prescription.png)
+
+### Payments
+![Payments](./Images/9-Payments.png)
+
+### PDF Report
+![PDF](./Images/10-PDF.png) 
 
 ------------------------------------------------------------
 
